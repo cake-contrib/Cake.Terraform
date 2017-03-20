@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>Cake.Terraform</id>
+    <version>0.0.0</version>
+    <authors>Erik van Brakel</authors>
+    <owners>Erik van Brakel</owners>
+    <description>Cake Terraform Addin.</description>
+    <summary>Cake AddIn that extends Cake with ability to execute terraform commands.</summary>
+    <licenseUrl>https://github.com/erikvanbrakel/Cake.Terraform/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/erikvanbrakel/Cake.Terraform/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <copyright>Copyright (c) 2017 - Present</copyright>
+    <tags>Cake, Script, Build, Terraform, Hashicorp</tags>
+  </metadata>
+  <files>
+    <file src="Cake.Terraform.dll" target="lib\net45" />
+    <file src="Cake.Terraform.pdb" target="lib\net45" />
+  </files>
+</package>
