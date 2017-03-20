@@ -56,6 +56,18 @@ namespace Cake.Terraform.Tests
             }
 
             [Fact]
+            public void Should_find_linux_executable()
+            {
+                var fixture = new TerraformPlanFixture(PlatformFamily.Linux);
+                fixture.Environment.Platform.Family = PlatformFamily.Linux;
+
+
+                var result = fixture.Run();
+
+                Assert.Equal("/Working/tools/terraform", result.Path.FullPath);
+            }
+
+            [Fact]
             public void Should_set_init_parameter()
             {
                 var fixture = new TerraformInitFixture();

@@ -1,8 +1,14 @@
+using Cake.Core;
+
 namespace Cake.Terraform.Tests
 {
     internal class TerraformPlanFixture : TerraformFixture<TerraformPlanSettings>
     {
-        public TerraformPlanFixture() : base("terraform.exe")
+        public TerraformPlanFixture()
+        {
+        }
+
+        public TerraformPlanFixture(PlatformFamily platformFamily) : base(platformFamily)
         {
         }
 
