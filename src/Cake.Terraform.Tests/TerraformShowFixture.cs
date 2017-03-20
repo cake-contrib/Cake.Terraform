@@ -15,6 +15,7 @@ namespace Cake.Terraform.Tests
         protected override void RunTool()
         {
             var tool = new TerraformShowRunner(FileSystem, Environment, ProcessRunner, Tools);
+            Settings.PlanFile = "my.plan";
             ProcessRunner.Process.SetStandardOutput(new [] { "output" });
             tool.Run(Settings);
         }

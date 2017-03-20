@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using Cake.Core;
 using Cake.Core.IO;
 using Cake.Core.Tooling;
@@ -14,6 +15,11 @@ namespace Cake.Terraform
 
         public void Run(TerraformShowSettings settings)
         {
+            if (settings.PlanFile == null)
+            {
+                throw new ArgumentNullException(nameof(settings.PlanFile));
+            }
+
             var arguments = new ProcessArgumentBuilder()
                 .Append("show")
                 .Append(settings.PlanFile.FullPath);
