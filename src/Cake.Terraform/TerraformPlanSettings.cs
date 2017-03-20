@@ -1,8 +1,10 @@
-﻿namespace Cake.Terraform
+﻿using Cake.Core.IO;
+
+namespace Cake.Terraform
 {
     public class TerraformPlanSettings : TerraformSettings
     {
-        public string OutFile { get; set; }
+        public FilePath OutFile { get; set; }
         public int Parallelism { get; set; }
     }
 }

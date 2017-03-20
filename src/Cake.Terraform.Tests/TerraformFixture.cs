@@ -10,6 +10,7 @@ namespace Cake.Terraform.Tests
 
         public ICakeLog Log { get; set; }
         public ITerraformToolResolver Resolver { get; set; }
+
         protected TerraformFixture(string toolFilename) : base(toolFilename)
         {
             Resolver = Substitute.For<ITerraformToolResolver>();

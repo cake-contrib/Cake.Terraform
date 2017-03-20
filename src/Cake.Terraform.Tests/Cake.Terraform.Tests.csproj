@@ -63,6 +63,7 @@
     <Compile Include="TerraformFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TerraformInitFixture.cs" />
+    <Compile Include="TerraformInitTests.cs" />
     <Compile Include="TerraformPlanFixture.cs" />
     <Compile Include="TerraformPlanTests.cs" />
   </ItemGroup>

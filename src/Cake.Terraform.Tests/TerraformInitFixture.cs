@@ -2,13 +2,14 @@ namespace Cake.Terraform.Tests
 {
     class TerraformInitFixture : TerraformFixture<TerraformInitSettings>
     {
-        public TerraformInitFixture(string toolFilename) : base(toolFilename)
+        public TerraformInitFixture() : base("terraform.exe")
         {
         }
 
         protected override void RunTool()
         {
-            throw new System.NotImplementedException();
+            var tool = new TerraformBuildRunner(FileSystem, Environment, ProcessRunner, Tools, Resolver);
+            tool.Run(Settings);
         }
     }
 }

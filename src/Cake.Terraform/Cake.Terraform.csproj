@@ -45,6 +45,8 @@
     <Compile Include="ITerraformToolResolver.cs" />
     <Compile Include="TerraformAliases.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TerraformApplySettings.cs" />
+    <Compile Include="TerraformInitSettings.cs" />
     <Compile Include="TerraformPlanSettings.cs" />
     <Compile Include="TerraformRunner.cs" />
     <Compile Include="TerraformSettings.cs" />
