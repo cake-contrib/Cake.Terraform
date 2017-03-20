@@ -67,6 +67,11 @@ namespace Cake.Terraform
                 builder = builder.Append("init");
                 return builder;
             }
+            else if (settings is TerraformApplySettings)
+            {
+                builder = builder.Append("apply");
+                return builder;
+            }
             throw new NotImplementedException();
         }
     }

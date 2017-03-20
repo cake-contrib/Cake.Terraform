@@ -60,6 +60,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TerraformApplyFixture.cs" />
+    <Compile Include="TerraformApplyTests.cs" />
     <Compile Include="TerraformFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TerraformInitFixture.cs" />
