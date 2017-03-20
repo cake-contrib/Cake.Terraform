@@ -68,6 +68,8 @@
     <Compile Include="TerraformInitTests.cs" />
     <Compile Include="TerraformPlanFixture.cs" />
     <Compile Include="TerraformPlanTests.cs" />
+    <Compile Include="TerraformShowFixture.cs" />
+    <Compile Include="TerraformShowTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cake.Terraform\Cake.Terraform.csproj">

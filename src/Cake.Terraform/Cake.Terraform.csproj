@@ -52,6 +52,8 @@
     <Compile Include="TerraformPlanSettings.cs" />
     <Compile Include="TerraformRunner.cs" />
     <Compile Include="TerraformSettings.cs" />
+    <Compile Include="TerraformShowRunner.cs" />
+    <Compile Include="TerraformShowSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
