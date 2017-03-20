@@ -56,7 +56,18 @@ namespace Cake.Terraform.Tests
             }
 
             [Fact]
-            public void Should_throw_if_process_has_a_non_zero_exit_code()
+            public void Should_not_have_changes_if_process_has_exit_code_zero()
+            {
+                var fixture = new TerraformPlanFixture();
+                fixture.GivenProcessExitsWithCode(0);
+
+                var result = fixture.Run();
+
+                Assert.False(fixture.HasChanges);
+            }
+
+            [Fact]
+            public void Should_throw_if_process_has_exit_code_one()
             {
                 var fixture = new TerraformPlanFixture();
                 fixture.GivenProcessExitsWithCode(1);
@@ -65,6 +76,17 @@ namespace Cake.Terraform.Tests
 
                 Assert.IsType<CakeException>(result);
                 Assert.Equal("Terraform: Process returned an error (exit code 1).", result.Message);
+            }
+
+            [Fact]
+            public void Should_have_changes_if_process_has_exit_code_two()
+            {
+                var fixture = new TerraformPlanFixture();
+                fixture.GivenProcessExitsWithCode(2);
+
+                var result = fixture.Run();
+
+                Assert.True(fixture.HasChanges);
             }
 
             [Fact]

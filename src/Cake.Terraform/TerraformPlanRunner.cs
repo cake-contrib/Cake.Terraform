@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Cake.Core;
 using Cake.Core.IO;
 using Cake.Core.Tooling;
@@ -27,6 +28,18 @@ namespace Cake.Terraform
             }
 
             Run(settings, builder);
+        }
+
+        protected override void ProcessExitCode(int exitCode)
+        {
+            if (exitCode == 2)
+            {
+                HasChanges = true;
+            }
+            else
+            {
+                base.ProcessExitCode(exitCode);
+            }
         }
     }
 }

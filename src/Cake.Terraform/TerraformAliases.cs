@@ -22,9 +22,17 @@ namespace Cake.Terraform
         }
 
         [CakeMethodAlias]
-        public static void TerraformApply(this ICakeContext context)
+        public static void TerraformApply(this ICakeContext context, TerraformApplySettings settings)
         {
+            var runner = new TerraformApplyRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
+            runner.Run(settings);
+        }
 
+        [CakeMethodAlias]
+        public static void TerraformShow(this ICakeContext context, TerraformShowSettings settings)
+        {
+            var runner = new TerraformShowRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
+            runner.Run(settings);
         }
     }
 }

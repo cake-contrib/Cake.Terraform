@@ -12,10 +12,13 @@ namespace Cake.Terraform.Tests
         {
         }
 
+        public bool HasChanges { get; set; }
+
         protected override void RunTool()
         {
             var tool = new TerraformPlanRunner(FileSystem, Environment, ProcessRunner, Tools);
             tool.Run(Settings);
+            HasChanges = tool.HasChanges;
         }
     }
 }
