@@ -8,7 +8,7 @@ namespace Cake.Terraform.Tests
 
         protected override void RunTool()
         {
-            var tool = new TerraformBuildRunner(FileSystem, Environment, ProcessRunner, Tools, Resolver);
+            var tool = new TerraformInitRunner(FileSystem, Environment, ProcessRunner, Tools);
             tool.Run(Settings);
         }
     }

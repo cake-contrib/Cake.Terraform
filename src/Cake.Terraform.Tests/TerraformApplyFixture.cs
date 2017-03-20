@@ -8,7 +8,7 @@
 
         protected override void RunTool()
         {
-            var tool = new TerraformBuildRunner(FileSystem, Environment, ProcessRunner, Tools, Resolver);
+            var tool = new TerraformApplyRunner(FileSystem, Environment, ProcessRunner, Tools);
             tool.Run(Settings);
         }
     }

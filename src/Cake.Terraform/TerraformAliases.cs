@@ -9,14 +9,14 @@ namespace Cake.Terraform
         [CakeMethodAlias]
         public static void TerraformInit(this ICakeContext context, TerraformInitSettings settings)
         {
-            var runner = new TerraformBuildRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, new TerraformToolResolver(context.FileSystem, context.Environment));
+            var runner = new TerraformInitRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
             runner.Run(settings);
         }
 
         [CakeMethodAlias]
         public static bool TerraformPlan(this ICakeContext context, TerraformPlanSettings settings)
         {
-            var runner = new TerraformBuildRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, new TerraformToolResolver(context.FileSystem, context.Environment));
+            var runner = new TerraformPlanRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
             runner.Run(settings);
             return runner.HasChanges;
         }

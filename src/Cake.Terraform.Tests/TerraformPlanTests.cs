@@ -1,4 +1,3 @@
-using System;
 using Cake.Core;
 using Cake.Testing;
 using Xunit;

@@ -2,8 +2,7 @@
 
 namespace Cake.Terraform
 {
-    public class TerraformSettings : ToolSettings
+    public abstract class TerraformSettings : ToolSettings
     {
-        
     }
 }
