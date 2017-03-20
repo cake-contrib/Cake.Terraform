@@ -47,7 +47,7 @@ namespace Cake.Terraform.Tests
             [Fact]
             public void Should_throw_if_process_has_a_non_zero_exit_code()
             {
-                var fixture = new TerraformPlanFixture();
+                var fixture = new TerraformInitFixture();
                 fixture.GivenProcessExitsWithCode(1);
 
                 var result = Record.Exception(() => fixture.Run());
@@ -57,7 +57,7 @@ namespace Cake.Terraform.Tests
             }
 
             [Fact]
-            public void Should_set_plan_parameter()
+            public void Should_set_init_parameter()
             {
                 var fixture = new TerraformInitFixture();
 
