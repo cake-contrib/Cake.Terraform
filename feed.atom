@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<link rel="self" href="http://erikvanbrakel.github.io/Cake.Terraform" />
+	<id>http://erikvanbrakel.github.io/Cake.Terraform</id>
+	<title />
+	<rights>2017</rights>
+	<updated>2017-03-21T12:47:14Z</updated>
+	<entry>
+		<author>
+			<name>erikvanbrakel</name>
+		</author>
+		<link href="http://erikvanbrakel.github.io/Cake.Terraform/blog/initial-release" />
+		<id>http://erikvanbrakel.github.io/Cake.Terraform/blog/initial-release</id>
+		<title>Initial Release - 0.1.0</title>
+		<updated>2017-03-21T00:00:00Z</updated>
+		<summary>&lt;p&gt;The first prerelease version of Cake.Terraform is available!&lt;/p&gt;</summary>
+	</entry>
+</feed>
