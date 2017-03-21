@@ -8,7 +8,11 @@ BuildParameters.SetParameters(context: Context,
                             title: "Cake.Terraform",
                             repositoryOwner: "erikvanbrakel",
                             repositoryName: "Cake.Terraform",
-                            appVeyorAccountName: "erikvanbrakel");
+                            appVeyorAccountName: "erikvanbrakel",
+                            webHost: "erikvanbrakel.github.io",
+                            webLinkRoot: "Cake.Terraform",
+                            webBaseEditUrl: "https://github.com/erikvanbrakel/Cake.Terraform/tree/develop/docs/input"
+                            );
 
 BuildParameters.PrintParameters(Context);
 
