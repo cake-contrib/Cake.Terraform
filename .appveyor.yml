@@ -25,10 +25,7 @@ cache:
 - Source\packages -> Source\**\packages.config
 - tools -> setup.cake
 
-deploy:
-- provider: NuGet
-  server: https://www.myget.org/F/erikvanbrakel/api/v2/package
-  api_key:
+environment:
+  MYGET_SOURCE: https://www.myget.org/F/erikvanbrakel/api/v2/package
+  MYGET_API_KEY:
     secure: OtvPhMbycHaLLhPWTGjvKXrJBsx/HyU+6IXFlnhOhwAnt7N5/ffoFQJVxSMJ2lnt
-  skip_symbols: true
-  artifact: /.*\.nupkg/
