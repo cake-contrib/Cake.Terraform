@@ -29,7 +29,7 @@ environment:
   WYAM_DEPLOY_REMOTE: https://github.com/erikvanbrakel/Cake.Terraform
   WYAM_DEPLOY_BRANCH: gh-pages
   WYAM_ACCESS_TOKEN:
-      secure: 0Q2ZD1lH5KGlzWddsOp6IP3wktb3MDznNfO4qVeCxqZLwJFz9B19tVhApzrEt
+    secure: 0Q2ZD1lH5KGlzWddsOp6IP3wktb3MDznNfO4qVeCxqZLwJFz9B19tVhApzrEt
   MYGET_SOURCE: https://www.myget.org/F/erikvanbrakel/api/v2/package
   MYGET_API_KEY:
     secure: OtvPhMbycHaLLhPWTGjvKXrJBsx/HyU+6IXFlnhOhwAnt7N5/ffoFQJVxSMJ2lnt
