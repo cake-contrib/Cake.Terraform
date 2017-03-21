@@ -9,7 +9,7 @@ Release notes can be found [here](ReleaseNotes.md).
 
 | |Stable|Pre-release|
 |:--:|:--:|:--:|
-|GitHub Release|-|[![GitHub release](https://img.shields.io/github/release/cake-contrib/Cake.Terraform.svg)][3]|
+|GitHub Release|-|[![GitHub release](https://img.shields.io/github/release/erikvanbrakel/Cake.Terraform.svg)][3]|
 |NuGet|[![NuGet](https://img.shields.io/nuget/v/Cake.Terraform.svg)][4]|[![NuGet](https://img.shields.io/nuget/vpre/Cake.Terraform.svg)][5]|
 
 ## Build Status
