@@ -10,7 +10,7 @@ Release notes can be found [here](ReleaseNotes.md).
 | |Stable|Pre-release|
 |:--:|:--:|:--:|
 |GitHub Release|-|[![GitHub release](https://img.shields.io/github/release/erikvanbrakel/Cake.Terraform.svg)][3]|
-|NuGet|[![NuGet](https://img.shields.io/nuget/v/Cake.Terraform.svg)][4]|[![NuGet](https://img.shields.io/nuget/vpre/Cake.Terraform.svg)][5]|
+|NuGet|[![MyGet](https://img.shields.io/myget/erikvanbrakel/vpre/Cake.Terraform.svg)][4]|[![NuGet](https://img.shields.io/nuget/vpre/Cake.Terraform.svg)][5]|
 
 ## Build Status
 
@@ -27,7 +27,7 @@ Release notes can be found [here](ReleaseNotes.md).
 [1]: https://www.terraform.io/
 [2]: https://mit-license.org/
 [3]: https://github.com/erikvanbrakel/Cake.Terraform/releases/latest
-[4]: https://www.nuget.org/packages/Cake.Terraform
+[4]: https://www.myget.org/feed/erikvanbrakel/package/nuget/Cake.Terraform
 [5]: https://www.nuget.org/packages/Cake.Terraform
 [6]: https://ci.appveyor.com/project/erikvanbrakel/cake-terraform/branch/develop
 [7]: https://ci.appveyor.com/project/erikvanbrakel/cake-terraform/branch/master
