@@ -31,6 +31,11 @@ namespace Cake.Terraform
                 .Append("show")
                 .Append(settings.PlanFile.FullPath);
 
+            if (settings.OutputFormat == OutputFormat.PlainText)
+            {
+                arguments.Append("-no-color");
+            }
+
             var processSettings = new ProcessSettings();
             if (settings.OutFile != null)
             {

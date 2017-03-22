@@ -56,19 +56,20 @@ namespace Cake.Terraform
           color: grey;
         }
       </style>
-</head><body><ul>";
+</head><body><pre><code>
+";
 
         private readonly string _footer = @"
-</ul></body></html>
+</code></pre></body></html>
 ";
 
         public override string FormatLines(IEnumerable<string> lines)
         {
             var outputBuilder = new StringBuilder();
-            outputBuilder.Append(_header);
+            outputBuilder.AppendLine(_header);
 
             var regex = new Regex(@"\e\[(3[0-7]|90|1)m(.*)");
-            foreach(var line in lines.Select(x => { var r = new Regex(@"\e\[0m"); return r.Replace(x, ""); }))
+            foreach(var line in lines.Select(x => new Regex(@"\e\[0m").Replace(x, "").Replace("\\r","\r").Replace("\\n", "\n")))
             {
                 var match = regex.Match(line);
                 if(match.Success) {
@@ -81,7 +82,7 @@ namespace Cake.Terraform
                 }
             }
 
-            outputBuilder.Append(_footer);
+            outputBuilder.AppendLine(_footer);
 
             return outputBuilder.ToString();
         }
