@@ -80,7 +80,8 @@ Task("Plan")
 {
     var settings = new TerraformShowSettings {
         PlanFile = "./output/terraform.plan",
-        OutFile = "./output/terraform.txt"
+        OutFile = "./output/terraform.html",
+        OutputFormat = OutputFormat.Html
     };
     TerraformShow(settings);
 });
