@@ -6,5 +6,6 @@ namespace Cake.Terraform
     {
         public FilePath OutFile { get; set; }
         public FilePath PlanFile { get; set; }
+        public OutputFormat OutputFormat { get; set; } = OutputFormat.PlainText;
     }
 }

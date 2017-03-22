@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Cake.Core;
 using Cake.Core.IO;
@@ -8,6 +9,12 @@ namespace Cake.Terraform
 {
     public class TerraformShowRunner : TerraformRunner<TerraformShowSettings>
     {
+        private readonly Dictionary<OutputFormat, OutputFormatter> _formatters = new Dictionary<OutputFormat, OutputFormatter>
+        {
+            {OutputFormat.PlainText, new PlainTextFormatter()},
+            {OutputFormat.Html, new HtmlFormatter()}
+        };
+
         public TerraformShowRunner(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools)
             : base(fileSystem, environment, processRunner, tools)
         {
@@ -32,8 +39,16 @@ namespace Cake.Terraform
 
             Run(settings, arguments, processSettings, x =>
             {
-                if(settings.OutFile != null)
-                    File.WriteAllLines(settings.OutFile.FullPath, x.GetStandardOutput());
+                if (settings.OutFile != null)
+                {
+                    OutputFormatter formatter;
+                    if (!_formatters.TryGetValue(settings.OutputFormat, out formatter))
+                    {
+                        formatter = _formatters[OutputFormat.PlainText];
+                    }
+
+                    File.WriteAllText(settings.OutFile.FullPath, formatter.FormatLines(x.GetStandardOutput()));
+                }
             });
         }
     }
