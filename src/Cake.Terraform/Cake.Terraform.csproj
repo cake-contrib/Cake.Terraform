@@ -42,6 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HtmlFormatter.cs" />
+    <Compile Include="OutputFormat.cs" />
+    <Compile Include="OutputFormatter.cs" />
+    <Compile Include="PlainTextFormatter.cs" />
     <Compile Include="TerraformAliases.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TerraformApplyRunner.cs" />
