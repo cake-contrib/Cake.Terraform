@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Terraform/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Terraform/assets/img/favicon.ico" type="image/x-icon">
-        <title>Docs - API - TerraformInitRunner Class</title>
+        <title>Docs - API - OutputFormat Enum</title>
         <link href="/Cake.Terraform/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Terraform/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Terraform/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
@@ -73,8 +73,7 @@
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
-<p><a href="#Constructors">Constructors</a></p>
-<p><a href="#Methods">Methods</a></p>
+<p><a href="#fields">Fields</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -132,7 +131,7 @@
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformAliases">TerraformAliases</a></li>
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformApplyRunner">TerraformApplyRunner</a></li>
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformApplySettings">Terraform<wbr>Apply<wbr>Settings</a></li>
-				<li class="selected"><a href="/Cake.Terraform/api/Cake.Terraform/TerraformInitRunner">TerraformInitRunner</a></li>
+				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformInitRunner">TerraformInitRunner</a></li>
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformInitSettings">Terraform<wbr>Init<wbr>Settings</a></li>
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformPlanRunner">TerraformPlanRunner</a></li>
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformPlanSettings">Terraform<wbr>Plan<wbr>Settings</a></li>
@@ -141,7 +140,7 @@
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformShowRunner">TerraformShowRunner</a></li>
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformShowSettings">Terraform<wbr>Show<wbr>Settings</a></li>
 			<li class="header">Enum Types</li>
-				<li><a href="/Cake.Terraform/api/Cake.Terraform/OutputFormat">OutputFormat</a></li>
+				<li class="selected"><a href="/Cake.Terraform/api/Cake.Terraform/OutputFormat">OutputFormat</a></li>
 
 
                     </ul>
@@ -155,7 +154,7 @@
 
 
 <section class="content-header">
-	<h1>TerraformInitRunner <small>Class</small></h1>
+	<h1>OutputFormat <small>Enum</small></h1>
 </section>
 <section class="content">
 	
@@ -170,12 +169,21 @@
 								<dt>Namespace</dt>
 								<dd><a href="/Cake.Terraform/api/Cake.Terraform">Cake<wbr>.Terraform</a></dd>
 											
+								<dt>Interfaces</dt>
+								<dd>
+									<ul class="list-unstyled">
+											<li>IComparable</li>								
+											<li>IFormattable</li>								
+											<li>IConvertible</li>								
+									</ul>
+								</dd>
 							
 								<dt>Base Types</dt>
 								<dd>
 									<ul class="list-unstyled">										
-											<li>Tool<wbr>&lt;<wbr>Terraform<wbr>Init<wbr>Settings&gt;<wbr></li>								
-											<li>TerraformRunner<wbr>&lt;<wbr>Terraform<wbr>Init<wbr>Settings&gt;<wbr></li>								
+											<li>object</li>								
+											<li>ValueType</li>								
+											<li>Enum</li>								
 									</ul>
 								</dd>				
 							
@@ -185,9 +193,13 @@
 					<div class="col-md-6">
 						<div class="mermaid">
 							graph TD
-	Base0["TerraformRunner&lt;TerraformInitSettings&gt;"]--&gt;Type
-	Base1["Tool&lt;TerraformInitSettings&gt;"]--&gt;Base0
-	Type["TerraformInitRunner"]
+	Base0["Enum"]--&gt;Type
+	Base1["ValueType"]--&gt;Base0
+	Base2["object"]--&gt;Base1
+	Interface0["IComparable"]-.-&gt;Type
+	Interface1["IFormattable"]-.-&gt;Type
+	Interface2["IConvertible"]-.-&gt;Type
+	Type["OutputFormat"]
 class Type type-node
 
 						</div>
@@ -197,57 +209,48 @@ class Type type-node
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public class TerraformInitRunner : TerraformRunner&lt;TerraformInitSettings&gt;</code></pre>
+	<pre><code>public enum OutputFormat</code></pre>
 
 
 
 
 
 
-			<h1 id="Constructors">Constructors</h1>
-			<div class="box">
-				<div class="box-body no-padding table-responsive">
-					<table class="table table-striped table-hover two-cols">
-						<thead>
-							<tr>
-								<th>Name</th>
-									<th>Summary</th>
-							</tr>
-						</thead>
-							<tbody><tr>
-								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformInitRunner/20C0D1BA">TerraformInitRunner<wbr>(IFileSystem, <wbr>ICakeEnvironment, <wbr>IProcessRunner, <wbr>IToolLocator)<wbr></a></td>
-									<td></td>
-							</tr>
-					</tbody></table>
-				</div>
-			</div>
-		
 
 
-
-
-			<h1 id="Methods">Methods</h1>
+			<h1 id="fields">Fields</h1>
 			<div class="box">
 				<div class="box-body no-padding table-responsive">
 					<table class="table table-striped table-hover three-cols">
 						<thead>
 							<tr>
 								<th>Name</th>
-								<th>Value</th>
+								<th>Constant Value</th>
 								<th>Summary</th>
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformInitRunner/866DBCFE">Run<wbr>(<wbr>Terraform<wbr>Init<wbr>Settings)<wbr></a></td>
-								<td>void</td>
+								<td><a href="/Cake.Terraform/api/Cake.Terraform/OutputFormat/D84B6618">Html</a></td>
+								<td>1</td>
 								<td>
 									<div></div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Terraform/api/Cake.Terraform/OutputFormat/8B1C274E">PlainText</a></td>
+								<td>0</td>
+								<td>
+									<div></div>
+											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
 					</tbody></table>
 				</div>
 			</div>
 		
+
+
 
 
 	

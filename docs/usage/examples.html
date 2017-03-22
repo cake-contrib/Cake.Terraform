@@ -168,7 +168,8 @@ Task("Plan")
 {
     var settings = new <a href="/Cake.Terraform/api/Cake.Terraform/TerraformShowSettings">TerraformShowSettings</a> {
         PlanFile = "./output/terraform.plan",
-        OutFile = "./output/terraform.txt"
+        OutFile = "./output/terraform.html",
+        <a href="/Cake.Terraform/api/Cake.Terraform/OutputFormat">OutputFormat</a> = OutputFormat.Html
     };
     TerraformShow(settings);
 });
