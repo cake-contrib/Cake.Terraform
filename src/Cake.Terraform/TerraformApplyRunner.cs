@@ -19,7 +19,7 @@ namespace Cake.Terraform
             {
                 foreach (var inputVariable in settings.InputVariables)
                 {
-                    builder.Append($"-var '{inputVariable.Key}={inputVariable.Value}'");
+                    builder.AppendSwitchQuoted("-var", $"{inputVariable.Key}={inputVariable.Value}");
                 }
             }
 

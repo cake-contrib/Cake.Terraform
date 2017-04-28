@@ -93,7 +93,7 @@ namespace Cake.Terraform.Tests
                 };
                 var result = fixture.Run();
 
-                Assert.Contains("-var 'access_key=foo' -var 'secret_key=bar'", result.Args);
+                Assert.Contains("-var \"access_key=foo\" -var \"secret_key=bar\"", result.Args);
             }
         }
     }
