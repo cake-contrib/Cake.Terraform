@@ -4,6 +4,8 @@ using Xunit;
 
 namespace Cake.Terraform.Tests
 {
+    using System.Collections.Generic;
+
     public class TerraformApplyTests
     {
         public class TheExecutable
@@ -76,8 +78,23 @@ namespace Cake.Terraform.Tests
 
                 Assert.Contains("apply", result.Args);
             }
+
+            [Fact]
+            public void Should_set_input_variables()
+            {
+                var fixture = new TerraformApplyFixture();
+                fixture.Settings = new TerraformApplySettings
+                {
+                    InputVariables = new Dictionary<string, string>
+                    {
+                        { "access_key", "foo" },
+                        { "secret_key", "bar" }
+                    }
+                };
+                var result = fixture.Run();
+
+                Assert.Contains("-var 'access_key=foo' -var 'secret_key=bar'", result.Args);
+            }
         }
-
-
     }
 }
