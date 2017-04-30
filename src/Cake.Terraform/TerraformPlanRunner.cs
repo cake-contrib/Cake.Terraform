@@ -24,7 +24,14 @@ namespace Cake.Terraform
             if (settings.Parallelism > 0)
             {
                 builder = builder.Append($"-parallelism={settings.Parallelism}");
+            }
 
+            if (settings.InputVariables != null)
+            {
+                foreach (var inputVariable in settings.InputVariables)
+                {
+                    builder.AppendSwitchQuoted("-var", $"{inputVariable.Key}={inputVariable.Value}");
+                }
             }
 
             Run(settings, builder);

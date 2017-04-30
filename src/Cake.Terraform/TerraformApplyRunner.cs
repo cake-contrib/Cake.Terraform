@@ -14,6 +14,15 @@ namespace Cake.Terraform
         public void Run(TerraformApplySettings settings)
         {
             var builder = new ProcessArgumentBuilder().Append("apply");
+
+            if (settings.InputVariables != null)
+            {
+                foreach (var inputVariable in settings.InputVariables)
+                {
+                    builder.AppendSwitchQuoted("-var", $"{inputVariable.Key}={inputVariable.Value}");
+                }
+            }
+
             Run(settings, builder);
         }
     }
