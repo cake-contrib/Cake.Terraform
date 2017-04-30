@@ -68,12 +68,12 @@ namespace Cake.Terraform
             var outputBuilder = new StringBuilder();
             outputBuilder.AppendLine(_header);
 
-            var regex = new Regex(@"\e\[(3[0-7]|90|1)m(.*)");
+            var regex = new Regex(@"(.*)\e\[(3[0-7]|90|1)m(.*)");
             foreach(var line in lines.Select(x => new Regex(@"\e\[0m").Replace(x, "").Replace("\\r","\r").Replace("\\n", "\n")))
             {
                 var match = regex.Match(line);
                 if(match.Success) {
-                    var styledLine = $"<span class=\"{_styles[match.Groups[1].Value]}\">{match.Groups[2].Value}</span>";
+                    var styledLine = $"{match.Groups[1].Value}<span class=\"{_styles[match.Groups[2].Value]}\">{match.Groups[3].Value}</span>";
                     outputBuilder.AppendLine(styledLine);
                 }
                 else
