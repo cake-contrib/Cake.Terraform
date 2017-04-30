@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Terraform/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Terraform/assets/img/favicon.ico" type="image/x-icon">
-        <title>Docs - API - TerraformSettings Class</title>
+        <title>Cake.Terraform - API - TerraformSettings Class</title>
         <link href="/Cake.Terraform/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Terraform/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Terraform/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
@@ -36,7 +36,7 @@
             <header class="main-header">   
                      
                 <a href="/Cake.Terraform/" class="logo">
-                            <span>Docs</span>
+                            <span>Cake.Terraform</span>
                 </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
@@ -79,8 +79,8 @@
                 </section>
                 <section class="sidebar">                    
                     	
-	    <script src="/assets/js/lunr.min.js"></script>
-    <script src="/assets/js/searchIndex.js"></script>
+	    <script src="/Cake.Terraform/assets/js/lunr.min.js"></script>
+    <script src="/Cake.Terraform/assets/js/searchIndex.js"></script>
     <div class="sidebar-form">
         <div class="input-group">
             <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
@@ -126,6 +126,8 @@
 			<li class="header">Namespace</li>
 		<li><a href="/Cake.Terraform/api/Cake.Terraform">Cake<wbr>.Terraform</a></li>
 		<li role="separator" class="divider"></li>
+			<li class="header">Enum Types</li>
+				<li><a href="/Cake.Terraform/api/Cake.Terraform/OutputFormat">OutputFormat</a></li>
 			<li class="header">Class Types</li>
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformAliases">TerraformAliases</a></li>
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformApplyRunner">TerraformApplyRunner</a></li>
@@ -138,8 +140,6 @@
 				<li class="selected"><a href="/Cake.Terraform/api/Cake.Terraform/TerraformSettings">TerraformSettings</a></li>
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformShowRunner">TerraformShowRunner</a></li>
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformShowSettings">Terraform<wbr>Show<wbr>Settings</a></li>
-			<li class="header">Enum Types</li>
-				<li><a href="/Cake.Terraform/api/Cake.Terraform/OutputFormat">OutputFormat</a></li>
 
 
                     </ul>
@@ -179,10 +179,10 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
+											<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformShowSettings">Terraform<wbr>Show<wbr>Settings</a></li>								
 											<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformInitSettings">Terraform<wbr>Init<wbr>Settings</a></li>								
 											<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformPlanSettings">Terraform<wbr>Plan<wbr>Settings</a></li>								
 											<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformApplySettings">Terraform<wbr>Apply<wbr>Settings</a></li>								
-											<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformShowSettings">Terraform<wbr>Show<wbr>Settings</a></li>								
 									</ul>
 								</dd>			
 							
@@ -194,14 +194,14 @@
 	Base0["ToolSettings"]--&gt;Type
 	Type["TerraformSettings"]
 class Type type-node
-	Type--&gt;Derived0["TerraformInitSettings"]
-	click Derived0 "/Cake.Terraform/api/Cake.Terraform/TerraformInitSettings"
-	Type--&gt;Derived1["TerraformPlanSettings"]
-	click Derived1 "/Cake.Terraform/api/Cake.Terraform/TerraformPlanSettings"
-	Type--&gt;Derived2["TerraformApplySettings"]
-	click Derived2 "/Cake.Terraform/api/Cake.Terraform/TerraformApplySettings"
-	Type--&gt;Derived3["TerraformShowSettings"]
-	click Derived3 "/Cake.Terraform/api/Cake.Terraform/TerraformShowSettings"
+	Type--&gt;Derived0["TerraformShowSettings"]
+	click Derived0 "/Cake.Terraform/api/Cake.Terraform/TerraformShowSettings"
+	Type--&gt;Derived1["TerraformInitSettings"]
+	click Derived1 "/Cake.Terraform/api/Cake.Terraform/TerraformInitSettings"
+	Type--&gt;Derived2["TerraformPlanSettings"]
+	click Derived2 "/Cake.Terraform/api/Cake.Terraform/TerraformPlanSettings"
+	Type--&gt;Derived3["TerraformApplySettings"]
+	click Derived3 "/Cake.Terraform/api/Cake.Terraform/TerraformApplySettings"
 
 						</div>
 					</div>
@@ -211,6 +211,7 @@ class Type type-node
 
 	<h1 id="Syntax">Syntax</h1>
 	<pre><code>public abstract class TerraformSettings : ToolSettings</code></pre>
+
 
 
 
