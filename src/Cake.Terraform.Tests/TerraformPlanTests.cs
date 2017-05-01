@@ -144,6 +144,32 @@ namespace Cake.Terraform.Tests
 
                 Assert.Contains("-var \"access_key=foo\" -var \"secret_key=bar\"", result.Args);
             }
+
+            [Fact]
+            public void Should_set_destroy_flag_when_set_to_true()
+            {
+                var fixture = new TerraformPlanFixture();
+                fixture.Settings = new TerraformPlanSettings
+                {
+                    Destroy = true
+                };
+                var result = fixture.Run();
+
+                Assert.Contains("-destroy", result.Args);
+            }
+
+            [Fact]
+            public void Should_not_set_destroy_flag_if_set_to_false()
+            {
+                var fixture = new TerraformPlanFixture();
+                fixture.Settings = new TerraformPlanSettings
+                {
+                    Destroy = false
+                };
+                var result = fixture.Run();
+
+                Assert.DoesNotContain("-destroy", result.Args);
+            }
         }
     }
 }

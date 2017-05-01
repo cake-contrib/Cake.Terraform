@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using Cake.Core;
 using Cake.Core.IO;
 using Cake.Core.Tooling;
@@ -24,6 +23,11 @@ namespace Cake.Terraform
             if (settings.Parallelism > 0)
             {
                 builder = builder.Append($"-parallelism={settings.Parallelism}");
+            }
+
+            if (settings.Destroy)
+            {
+                builder = builder.Append("-destroy");
             }
 
             if (settings.InputVariables != null)

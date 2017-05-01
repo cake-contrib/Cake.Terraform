@@ -14,5 +14,7 @@ namespace Cake.Terraform
         ///     Gets or sets the input variables. https://www.terraform.io/intro/getting-started/variables.html
         /// </summary>
         public Dictionary<string, string> InputVariables { get; set; }
+
+        public bool Destroy { get; set; }
     }
 }
