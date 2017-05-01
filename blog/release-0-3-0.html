@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Terraform/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Terraform/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake.Terraform - API - TerraformInitRunner Class</title>
+        <title>Cake.Terraform - New release - 0.2.0</title>
         <link href="/Cake.Terraform/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Terraform/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Terraform/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
@@ -57,8 +57,8 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/Cake.Terraform/docs">Documentation</a></li>
-        <li><a href="/Cake.Terraform/blog">Blog</a></li>
-        <li class="active"><a href="/Cake.Terraform/api">API</a></li>
+        <li class="active"><a href="/Cake.Terraform/blog">Blog</a></li>
+        <li><a href="/Cake.Terraform/api">API</a></li>
  
                         </ul>       
                     </div>
@@ -72,77 +72,26 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
-<p><a href="#Constructors">Constructors</a></p>
-<p><a href="#Methods">Methods</a></p>
+        <div><p><a href="https://github.com/erikvanbrakel/Cake.Terraform/tree/develop/docs/inputblog/release-0-3-0.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#is-here">0.2.0 is here</a></p>
 <hr class="infobar-hidden">
 </div>
 
                 </section>
                 <section class="sidebar">                    
-                    	
-	    <script src="/Cake.Terraform/assets/js/lunr.min.js"></script>
-    <script src="/Cake.Terraform/assets/js/searchIndex.js"></script>
-    <div class="sidebar-form">
-        <div class="input-group">
-            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
-            <span class="input-group-btn">
-                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
-            </span>
-        </div>
-    </div>
-    <div id="search-results">
-    </div>
-    <script>
-        function runSearch(query){
-            $("#search-results").empty();			
-            if( query.length < 2 ){
-                return;
-            }			
-            var results = searchModule.search("*" + query + "*");
-            var listHtml = "<ul class='sidebar-menu'>";	
-            listHtml += "<li class='header'>Type Results</li>";	
-            if(results.length == 0 ){
-                listHtml += "<li>No results found</li>";
-            } else {					
-                for(var i = 0; i < results.length; ++i){
-                    var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
-                }				
-            }
-            listHtml += "</ul>";				
-            $("#search-results").append(listHtml);
-        }
-
-        $(document).ready(function(){
-            $("#search").on('input propertychange paste', function() {
-                runSearch($("#search").val());
-            });
-        });
-    </script>
-	
-    <hr>
+                    
 
                     <ul class="sidebar-menu">
                         
-			<li class="header">Namespace</li>
-		<li><a href="/Cake.Terraform/api/Cake.Terraform">Cake<wbr>.Terraform</a></li>
-		<li role="separator" class="divider"></li>
-			<li class="header">Class Types</li>
-				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformAliases">TerraformAliases</a></li>
-				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformApplyRunner">TerraformApplyRunner</a></li>
-				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformApplySettings">Terraform<wbr>Apply<wbr>Settings</a></li>
-				<li class="selected"><a href="/Cake.Terraform/api/Cake.Terraform/TerraformInitRunner">TerraformInitRunner</a></li>
-				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformInitSettings">Terraform<wbr>Init<wbr>Settings</a></li>
-				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformPlanRunner">TerraformPlanRunner</a></li>
-				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformPlanSettings">Terraform<wbr>Plan<wbr>Settings</a></li>
-				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformRunner_1">TerraformRunner<wbr>&lt;<wbr>T<wbr>Terraform<wbr>Settings&gt;<wbr></a></li>
-				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformSettings">TerraformSettings</a></li>
-				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformShowRunner">TerraformShowRunner</a></li>
-				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformShowSettings">Terraform<wbr>Show<wbr>Settings</a></li>
-			<li class="header">Enum Types</li>
-				<li><a href="/Cake.Terraform/api/Cake.Terraform/OutputFormat">OutputFormat</a></li>
 
+    <li class="header"><i class="fa fa-bookmark"></i> Categories</li>    
+        <li><a href="/Cake.Terraform/blog/release">Release</a></li>
+    
+    <li class="header"><i class="fa fa-calendar"></i> Archive</li>    
+        <li><a href="/Cake.Terraform/blog/archive/2017/03">March, 2017</a></li>
+    
+    <li class="header"><i class="fa fa-user"></i> Authors</li>    
+        <li><a href="/Cake.Terraform/blog/author/erikvanbrakel">erikvanbrakel</a></li>
 
                     </ul>
                 </section>                
@@ -154,105 +103,27 @@
 
 
 
-<section class="content-header">
-	<h1>TerraformInitRunner <small>Class</small></h1>
-</section>
-<section class="content">
-	
-	
-	
-		<div class="panel panel-default">
-  			<div class="panel-body">
-				<div class="row">
-					<div class="col-md-6">
-						<dl class="dl-horizontal">		
-
-								<dt>Namespace</dt>
-								<dd><a href="/Cake.Terraform/api/Cake.Terraform">Cake<wbr>.Terraform</a></dd>
-											
-							
-								<dt>Base Types</dt>
-								<dd>
-									<ul class="list-unstyled">										
-											<li>Tool<wbr>&lt;<wbr>Terraform<wbr>Init<wbr>Settings&gt;<wbr></li>								
-											<li>TerraformRunner<wbr>&lt;<wbr>Terraform<wbr>Init<wbr>Settings&gt;<wbr></li>								
-									</ul>
-								</dd>				
-							
-							
-						</dl>
-					</div>		
-					<div class="col-md-6">
-						<div class="mermaid">
-							graph TD
-	Base0["TerraformRunner&lt;TerraformInitSettings&gt;"]--&gt;Type
-	Base1["Tool&lt;TerraformInitSettings&gt;"]--&gt;Base0
-	Type["TerraformInitRunner"]
-class Type type-node
-
-						</div>
-					</div>
-				</div>
-  			</div>
-		</div>
-
-	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public class TerraformInitRunner : TerraformRunner&lt;TerraformInitSettings&gt;</code></pre>
-
-
-
-
-
-
-			<h1 id="Constructors">Constructors</h1>
-			<div class="box">
-				<div class="box-body no-padding table-responsive">
-					<table class="table table-striped table-hover two-cols">
-						<thead>
-							<tr>
-								<th>Name</th>
-									<th>Summary</th>
-							</tr>
-						</thead>
-							<tbody><tr>
-								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformInitRunner/20C0D1BA">TerraformInitRunner<wbr>(IFileSystem, <wbr>ICakeEnvironment, <wbr>IProcessRunner, <wbr>IToolLocator)<wbr></a></td>
-									<td></td>
-							</tr>
-					</tbody></table>
-				</div>
-			</div>
+	<section class="content-header">
+		<h1>New release - 0.2.0</h1>
+	</section>
+	<section class="content">
 		
 
 
+<dl class="dl-horizontal">
+    <dt><i class="fa fa-calendar"></i> Published</dt>
+    <dd>22 March 2017</dd>
+        <dt><i class="fa fa-bookmark"></i> Category</dt>
+        <dd><a href="/Cake.Terraform/blog/release">Release</a></dd>
+            <dt><i class="fa fa-user"></i> Author</dt>
+        <dd><a href="/Cake.Terraform/blog/author/erikvanbrakel">erikvanbrakel</a></dd>
+</dl>
+
+<h1 id="is-here">0.2.0 is here</h1>
+<p>This version adds functionality to format the output of the TerraformShow method as HTML. This is particularly useful in CI/CD scenarios, as a report to use within a build server such as TeamCity.</p>
 
 
-			<h1 id="Methods">Methods</h1>
-			<div class="box">
-				<div class="box-body no-padding table-responsive">
-					<table class="table table-striped table-hover three-cols">
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Value</th>
-								<th>Summary</th>
-							</tr>
-						</thead>
-							<tbody><tr>
-								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformInitRunner/866DBCFE">Run<wbr>(<wbr>Terraform<wbr>Init<wbr>Settings)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div></div>
-								</td>
-							</tr>
-					</tbody></table>
-				</div>
-			</div>
-		
-
-
-
-	
-</section>
+	</section>
                 
             </div>           
             
