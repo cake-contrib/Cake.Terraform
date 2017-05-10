@@ -4,16 +4,21 @@ using Cake.Core.Tooling;
 
 namespace Cake.Terraform
 {
-    public class TerraformApplyRunner : TerraformRunner<TerraformApplySettings>
+    public class TerraformDestroyRunner : TerraformRunner<TerraformDestroySettings>
     {
-        public TerraformApplyRunner(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools)
+        public TerraformDestroyRunner(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools)
             : base(fileSystem, environment, processRunner, tools)
         {
         }
 
-        public void Run(TerraformApplySettings settings)
+        public void Run(TerraformDestroySettings settings)
         {
-            var builder = new ProcessArgumentBuilder().Append("apply");
+            var builder = new ProcessArgumentBuilder().Append("destroy");
+
+            if (settings.Force)
+            {
+                builder = builder.Append("-force");
+            }
 
             if (!string.IsNullOrEmpty(settings.InputVariablesFile))
             {

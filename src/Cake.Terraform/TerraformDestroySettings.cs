@@ -1,15 +1,12 @@
-﻿using Cake.Core.IO;
+using System.Collections.Generic;
 
 namespace Cake.Terraform
 {
-    using System.Collections.Generic;
-
-    public class TerraformApplySettings : TerraformSettings
+    /// <summary>
+    /// The terraform destroy command is used to destroy the Terraform-managed infrastructure.
+    /// </summary>
+    public class TerraformDestroySettings : TerraformSettings
     {
-        public int Parallelism { get; set; }
-
-        public FilePath Plan { get; set; }
-
         /// <summary>
         ///     Gets or sets the input variables. https://www.terraform.io/intro/getting-started/variables.html
         /// </summary>
@@ -20,5 +17,10 @@ namespace Cake.Terraform
         /// https://www.terraform.io/docs/configuration/variables.html#variable-files
         /// </summary>
         public string InputVariablesFile { get; set; }
+
+        /// <summary>
+        /// If set to true, then the destroy confirmation will not be shown.
+        /// </summary>
+        public bool Force { get; set; }
     }
 }
