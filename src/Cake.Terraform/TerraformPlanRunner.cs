@@ -30,9 +30,9 @@ namespace Cake.Terraform
                 builder = builder.Append("-destroy");
             }
 
-            if (!string.IsNullOrEmpty(settings.InputVarieablesFile))
+            if (!string.IsNullOrEmpty(settings.InputVariablesFile))
             {
-                builder.AppendSwitchQuoted("-var-file", $"{settings.InputVarieablesFile}");
+                builder.AppendSwitchQuoted("-var-file", $"{settings.InputVariablesFile}");
             }
 
             if (settings.InputVariables != null)

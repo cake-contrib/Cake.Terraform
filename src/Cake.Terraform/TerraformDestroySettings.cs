@@ -16,7 +16,7 @@ namespace Cake.Terraform
         /// Variables file
         /// https://www.terraform.io/docs/configuration/variables.html#variable-files
         /// </summary>
-        public string InputVarieablesFile { get; set; }
+        public string InputVariablesFile { get; set; }
 
         /// <summary>
         /// If set to true, then the destroy confirmation will not be shown.

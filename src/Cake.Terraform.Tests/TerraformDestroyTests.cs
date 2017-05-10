@@ -119,7 +119,7 @@ namespace Cake.Terraform.Tests
                 {
                     Settings = new TerraformDestroySettings
                     {
-                        InputVarieablesFile = "./aws-creds.json",
+                        InputVariablesFile = "./aws-creds.json",
                         InputVariables = new Dictionary<string, string>
                         {
                             {"access_key", "foo"},

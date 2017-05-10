@@ -103,7 +103,7 @@ namespace Cake.Terraform.Tests
                 {
                     Settings = new TerraformApplySettings
                     {
-                        InputVarieablesFile = "./aws-creds.json",
+                        InputVariablesFile = "./aws-creds.json",
                         InputVariables = new Dictionary<string, string>
                         {
                             {"access_key", "foo"},
