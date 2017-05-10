@@ -4,17 +4,7 @@
 	<id>http://erikvanbrakel.github.io/Cake.Terraform</id>
 	<title>Cake.Terraform</title>
 	<rights>2017</rights>
-	<updated>2017-05-01T07:35:32Z</updated>
-	<entry>
-		<author>
-			<name>erikvanbrakel</name>
-		</author>
-		<link href="http://erikvanbrakel.github.io/Cake.Terraform/blog/release-0-3-0" />
-		<id>http://erikvanbrakel.github.io/Cake.Terraform/blog/release-0-3-0</id>
-		<title>New release - 0.2.0</title>
-		<updated>2017-03-22T00:00:00Z</updated>
-		<summary>&lt;p&gt;This version adds functionality to format the output of the TerraformShow method as HTML. This is particularly useful in CI/CD scenarios, as a report to use within a build server such as TeamCity.&lt;/p&gt;</summary>
-	</entry>
+	<updated>2017-05-10T15:26:17Z</updated>
 	<entry>
 		<author>
 			<name>erikvanbrakel</name>

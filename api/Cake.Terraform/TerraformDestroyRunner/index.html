@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Terraform/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Terraform/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake.Terraform - API - TerraformAliases Class</title>
+        <title>Cake.Terraform - API - TerraformDestroyRunner Class</title>
         <link href="/Cake.Terraform/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Terraform/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Terraform/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
@@ -73,7 +73,7 @@
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
-<p><a href="#Attributes">Attributes</a></p>
+<p><a href="#Constructors">Constructors</a></p>
 <p><a href="#Methods">Methods</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -129,10 +129,10 @@
 		<li><a href="/Cake.Terraform/api/Cake.Terraform">Cake<wbr>.Terraform</a></li>
 		<li role="separator" class="divider"></li>
 			<li class="header">Class Types</li>
-				<li class="selected"><a href="/Cake.Terraform/api/Cake.Terraform/TerraformAliases">TerraformAliases</a></li>
+				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformAliases">TerraformAliases</a></li>
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformApplyRunner">TerraformApplyRunner</a></li>
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformApplySettings">Terraform<wbr>Apply<wbr>Settings</a></li>
-				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformDestroyRunner">Terraform<wbr>Destroy<wbr>Runner</a></li>
+				<li class="selected"><a href="/Cake.Terraform/api/Cake.Terraform/TerraformDestroyRunner">Terraform<wbr>Destroy<wbr>Runner</a></li>
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformDestroySettings">Terraform<wbr>Destroy<wbr>Settings</a></li>
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformInitRunner">TerraformInitRunner</a></li>
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformInitSettings">Terraform<wbr>Init<wbr>Settings</a></li>
@@ -157,7 +157,7 @@
 
 
 <section class="content-header">
-	<h1>TerraformAliases <small>Class</small></h1>
+	<h1>Terraform<wbr>Destroy<wbr>Runner <small>Class</small></h1>
 </section>
 <section class="content">
 	
@@ -176,7 +176,8 @@
 								<dt>Base Types</dt>
 								<dd>
 									<ul class="list-unstyled">										
-											<li>object</li>								
+											<li>Tool<wbr>&lt;<wbr>Terraform<wbr>Destroy<wbr>Settings&gt;<wbr></li>								
+											<li>TerraformRunner<wbr>&lt;<wbr>Terraform<wbr>Destroy<wbr>Settings&gt;<wbr></li>								
 									</ul>
 								</dd>				
 							
@@ -186,8 +187,9 @@
 					<div class="col-md-6">
 						<div class="mermaid">
 							graph TD
-	Base0["object"]--&gt;Type
-	Type["TerraformAliases"]
+	Base0["TerraformRunner&lt;TerraformDestroySettings&gt;"]--&gt;Type
+	Base1["Tool&lt;TerraformDestroySettings&gt;"]--&gt;Base0
+	Type["TerraformDestroyRunner"]
 class Type type-node
 
 						</div>
@@ -197,31 +199,31 @@ class Type type-node
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>[CakeAliasCategory("Terraform")]
-public static class TerraformAliases</code></pre>
+	<pre><code>public class TerraformDestroyRunner : TerraformRunner&lt;TerraformDestroySettings&gt;</code></pre>
 
 
 
-	<h1 id="Attributes">Attributes</h1>
-	<div class="box">
-		<div class="box-body no-padding table-responsive">
-			<table class="table table-striped table-hover two-cols">
-				<thead>
-					<tr>
-						<th>Type</th>
-						<th>Description</th>
-					</tr>
-				</thead>
-					<tbody><tr>
-						<td>CakeAliasCategory</td>
-						<td></td>
-					</tr>
-			</tbody></table>
-		</div>
-	</div>	
 
 
 
+			<h1 id="Constructors">Constructors</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformDestroyRunner/DC30950C">Terraform<wbr>Destroy<wbr>Runner<wbr>(IFileSystem, <wbr>ICakeEnvironment, <wbr>IProcessRunner, <wbr>IToolLocator)<wbr></a></td>
+									<td></td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
 
 
 
@@ -238,43 +240,10 @@ public static class TerraformAliases</code></pre>
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformAliases/191FEEF7">TerraformApply<wbr>(ICakeContext, <wbr>Terraform<wbr>Apply<wbr>Settings)<wbr></a></td>
+								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformDestroyRunner/CA731864">Run<wbr>(<wbr>Terraform<wbr>Destroy<wbr>Settings)<wbr></a></td>
 								<td>void</td>
 								<td>
 									<div></div>
-											<div><small><em>static</em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformAliases/FBF3AEF9">TerraformDestroy<wbr>(ICakeContext, <wbr>Terraform<wbr>Destroy<wbr>Settings)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div></div>
-											<div><small><em>static</em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformAliases/6E752C2B">TerraformInit<wbr>(ICakeContext, <wbr>Terraform<wbr>Init<wbr>Settings)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div></div>
-											<div><small><em>static</em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformAliases/36B70798">TerraformPlan<wbr>(ICakeContext, <wbr>Terraform<wbr>Plan<wbr>Settings)<wbr></a></td>
-								<td>bool</td>
-								<td>
-									<div></div>
-											<div><small><em>static</em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformAliases/74F422E9">TerraformShow<wbr>(ICakeContext, <wbr>Terraform<wbr>Show<wbr>Settings)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div></div>
-											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
 					</tbody></table>

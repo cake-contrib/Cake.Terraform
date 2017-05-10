@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Terraform/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Terraform/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake.Terraform - API - TerraformAliases Class</title>
+        <title>Cake.Terraform - API - TerraformDestroySettings Class</title>
         <link href="/Cake.Terraform/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Terraform/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Terraform/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
@@ -72,9 +72,9 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
-<p><a href="#Attributes">Attributes</a></p>
-<p><a href="#Methods">Methods</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Properties">Properties</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -129,11 +129,11 @@
 		<li><a href="/Cake.Terraform/api/Cake.Terraform">Cake<wbr>.Terraform</a></li>
 		<li role="separator" class="divider"></li>
 			<li class="header">Class Types</li>
-				<li class="selected"><a href="/Cake.Terraform/api/Cake.Terraform/TerraformAliases">TerraformAliases</a></li>
+				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformAliases">TerraformAliases</a></li>
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformApplyRunner">TerraformApplyRunner</a></li>
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformApplySettings">Terraform<wbr>Apply<wbr>Settings</a></li>
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformDestroyRunner">Terraform<wbr>Destroy<wbr>Runner</a></li>
-				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformDestroySettings">Terraform<wbr>Destroy<wbr>Settings</a></li>
+				<li class="selected"><a href="/Cake.Terraform/api/Cake.Terraform/TerraformDestroySettings">Terraform<wbr>Destroy<wbr>Settings</a></li>
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformInitRunner">TerraformInitRunner</a></li>
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformInitSettings">Terraform<wbr>Init<wbr>Settings</a></li>
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformPlanRunner">TerraformPlanRunner</a></li>
@@ -157,12 +157,16 @@
 
 
 <section class="content-header">
-	<h1>TerraformAliases <small>Class</small></h1>
+	<h1>Terraform<wbr>Destroy<wbr>Settings <small>Class</small></h1>
 </section>
 <section class="content">
 	
 	
-	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+    The terraform destroy command is used to destroy the Terraform-managed infrastructure.
+    </div>
+
 		<div class="panel panel-default">
   			<div class="panel-body">
 				<div class="row">
@@ -176,7 +180,8 @@
 								<dt>Base Types</dt>
 								<dd>
 									<ul class="list-unstyled">										
-											<li>object</li>								
+											<li>ToolSettings</li>								
+											<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformSettings">TerraformSettings</a></li>								
 									</ul>
 								</dd>				
 							
@@ -186,8 +191,10 @@
 					<div class="col-md-6">
 						<div class="mermaid">
 							graph TD
-	Base0["object"]--&gt;Type
-	Type["TerraformAliases"]
+	Base0["TerraformSettings"]--&gt;Type
+	click Base0 "/Cake.Terraform/api/Cake.Terraform/TerraformSettings"
+	Base1["ToolSettings"]--&gt;Base0
+	Type["TerraformDestroySettings"]
 class Type type-node
 
 						</div>
@@ -197,28 +204,7 @@ class Type type-node
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>[CakeAliasCategory("Terraform")]
-public static class TerraformAliases</code></pre>
-
-
-
-	<h1 id="Attributes">Attributes</h1>
-	<div class="box">
-		<div class="box-body no-padding table-responsive">
-			<table class="table table-striped table-hover two-cols">
-				<thead>
-					<tr>
-						<th>Type</th>
-						<th>Description</th>
-					</tr>
-				</thead>
-					<tbody><tr>
-						<td>CakeAliasCategory</td>
-						<td></td>
-					</tr>
-			</tbody></table>
-		</div>
-	</div>	
+	<pre><code>public class TerraformDestroySettings : TerraformSettings</code></pre>
 
 
 
@@ -226,7 +212,9 @@ public static class TerraformAliases</code></pre>
 
 
 
-			<h1 id="Methods">Methods</h1>
+
+
+			<h1 id="Properties">Properties</h1>
 			<div class="box">
 				<div class="box-body no-padding table-responsive">
 					<table class="table table-striped table-hover three-cols">
@@ -238,49 +226,28 @@ public static class TerraformAliases</code></pre>
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformAliases/191FEEF7">TerraformApply<wbr>(ICakeContext, <wbr>Terraform<wbr>Apply<wbr>Settings)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div></div>
-											<div><small><em>static</em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformAliases/FBF3AEF9">TerraformDestroy<wbr>(ICakeContext, <wbr>Terraform<wbr>Destroy<wbr>Settings)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div></div>
-											<div><small><em>static</em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformAliases/6E752C2B">TerraformInit<wbr>(ICakeContext, <wbr>Terraform<wbr>Init<wbr>Settings)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div></div>
-											<div><small><em>static</em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformAliases/36B70798">TerraformPlan<wbr>(ICakeContext, <wbr>Terraform<wbr>Plan<wbr>Settings)<wbr></a></td>
+								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformDestroySettings/8C0EF6A6">Force</a></td>
 								<td>bool</td>
 								<td>
-									<div></div>
-											<div><small><em>static</em></small></div>
+									<div>
+    If set to true, then the destroy confirmation will not be shown.
+    </div>
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformAliases/74F422E9">TerraformShow<wbr>(ICakeContext, <wbr>Terraform<wbr>Show<wbr>Settings)<wbr></a></td>
-								<td>void</td>
+								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformDestroySettings/79F42CBE">InputVariables</a></td>
+								<td>Dictionary<wbr>&lt;string, <wbr>string&gt;<wbr></td>
 								<td>
-									<div></div>
-											<div><small><em>static</em></small></div>
+									<div>
+        Gets or sets the input variables. https://www.terraform.io/intro/getting-started/variables.html
+    </div>
 								</td>
 							</tr>
 					</tbody></table>
 				</div>
 			</div>
 		
+
 
 
 

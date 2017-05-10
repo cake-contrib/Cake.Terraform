@@ -130,6 +130,8 @@
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformAliases">TerraformAliases</a></li>
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformApplyRunner">TerraformApplyRunner</a></li>
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformApplySettings">Terraform<wbr>Apply<wbr>Settings</a></li>
+				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformDestroyRunner">Terraform<wbr>Destroy<wbr>Runner</a></li>
+				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformDestroySettings">Terraform<wbr>Destroy<wbr>Settings</a></li>
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformInitRunner">TerraformInitRunner</a></li>
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformInitSettings">Terraform<wbr>Init<wbr>Settings</a></li>
 				<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformPlanRunner">TerraformPlanRunner</a></li>
@@ -179,10 +181,11 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
+											<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformShowSettings">Terraform<wbr>Show<wbr>Settings</a></li>								
+											<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformApplySettings">Terraform<wbr>Apply<wbr>Settings</a></li>								
+											<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformDestroySettings">Terraform<wbr>Destroy<wbr>Settings</a></li>								
 											<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformInitSettings">Terraform<wbr>Init<wbr>Settings</a></li>								
 											<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformPlanSettings">Terraform<wbr>Plan<wbr>Settings</a></li>								
-											<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformApplySettings">Terraform<wbr>Apply<wbr>Settings</a></li>								
-											<li><a href="/Cake.Terraform/api/Cake.Terraform/TerraformShowSettings">Terraform<wbr>Show<wbr>Settings</a></li>								
 									</ul>
 								</dd>			
 							
@@ -194,14 +197,16 @@
 	Base0["ToolSettings"]--&gt;Type
 	Type["TerraformSettings"]
 class Type type-node
-	Type--&gt;Derived0["TerraformInitSettings"]
-	click Derived0 "/Cake.Terraform/api/Cake.Terraform/TerraformInitSettings"
-	Type--&gt;Derived1["TerraformPlanSettings"]
-	click Derived1 "/Cake.Terraform/api/Cake.Terraform/TerraformPlanSettings"
-	Type--&gt;Derived2["TerraformApplySettings"]
-	click Derived2 "/Cake.Terraform/api/Cake.Terraform/TerraformApplySettings"
-	Type--&gt;Derived3["TerraformShowSettings"]
-	click Derived3 "/Cake.Terraform/api/Cake.Terraform/TerraformShowSettings"
+	Type--&gt;Derived0["TerraformShowSettings"]
+	click Derived0 "/Cake.Terraform/api/Cake.Terraform/TerraformShowSettings"
+	Type--&gt;Derived1["TerraformApplySettings"]
+	click Derived1 "/Cake.Terraform/api/Cake.Terraform/TerraformApplySettings"
+	Type--&gt;Derived2["TerraformDestroySettings"]
+	click Derived2 "/Cake.Terraform/api/Cake.Terraform/TerraformDestroySettings"
+	Type--&gt;Derived3["TerraformInitSettings"]
+	click Derived3 "/Cake.Terraform/api/Cake.Terraform/TerraformInitSettings"
+	Type--&gt;Derived4["TerraformPlanSettings"]
+	click Derived4 "/Cake.Terraform/api/Cake.Terraform/TerraformPlanSettings"
 
 						</div>
 					</div>
