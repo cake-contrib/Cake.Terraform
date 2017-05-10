@@ -34,16 +34,16 @@ var searchModule = function() {
 
     a({
         id:0,
-        title:"TerraformInitRunner",
-        content:"TerraformInitRunner",
+        title:"TerraformInitSettings",
+        content:"TerraformInitSettings",
         description:'',
         tags:''
     });
 
     a({
         id:1,
-        title:"TerraformInitSettings",
-        content:"TerraformInitSettings",
+        title:"OutputFormat",
+        content:"OutputFormat",
         description:'',
         tags:''
     });
@@ -58,40 +58,40 @@ var searchModule = function() {
 
     a({
         id:3,
-        title:"OutputFormat",
-        content:"OutputFormat",
+        title:"TerraformApplySettings",
+        content:"TerraformApplySettings",
         description:'',
         tags:''
     });
 
     a({
         id:4,
-        title:"TerraformShowRunner",
-        content:"TerraformShowRunner",
+        title:"TerraformApplyRunner",
+        content:"TerraformApplyRunner",
         description:'',
         tags:''
     });
 
     a({
         id:5,
-        title:"TerraformRunner",
-        content:"TerraformRunner",
+        title:"TerraformPlanSettings",
+        content:"TerraformPlanSettings",
         description:'',
         tags:''
     });
 
     a({
         id:6,
-        title:"TerraformPlanRunner",
-        content:"TerraformPlanRunner",
+        title:"TerraformDestroySettings",
+        content:"TerraformDestroySettings",
         description:'',
         tags:''
     });
 
     a({
         id:7,
-        title:"TerraformShowSettings",
-        content:"TerraformShowSettings",
+        title:"TerraformShowRunner",
+        content:"TerraformShowRunner",
         description:'',
         tags:''
     });
@@ -106,59 +106,47 @@ var searchModule = function() {
 
     a({
         id:9,
-        title:"TerraformApplySettings",
-        content:"TerraformApplySettings",
+        title:"TerraformPlanRunner",
+        content:"TerraformPlanRunner",
         description:'',
         tags:''
     });
 
     a({
         id:10,
-        title:"TerraformPlanSettings",
-        content:"TerraformPlanSettings",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:11,
-        title:"TerraformDestroySettings",
-        content:"TerraformDestroySettings",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:12,
-        title:"TerraformApplyRunner",
-        content:"TerraformApplyRunner",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:13,
         title:"TerraformAliases",
         content:"TerraformAliases",
         description:'',
         tags:''
     });
 
-    y({
-        url:'/Cake.Terraform/Cake.Terraform/api/Cake.Terraform/TerraformInitRunner',
+    a({
+        id:11,
         title:"TerraformInitRunner",
-        description:""
+        content:"TerraformInitRunner",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:12,
+        title:"TerraformShowSettings",
+        content:"TerraformShowSettings",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:13,
+        title:"TerraformRunner",
+        content:"TerraformRunner",
+        description:'',
+        tags:''
     });
 
     y({
         url:'/Cake.Terraform/Cake.Terraform/api/Cake.Terraform/TerraformInitSettings',
         title:"TerraformInitSettings",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Terraform/Cake.Terraform/api/Cake.Terraform/TerraformSettings',
-        title:"TerraformSettings",
         description:""
     });
 
@@ -169,38 +157,20 @@ var searchModule = function() {
     });
 
     y({
-        url:'/Cake.Terraform/Cake.Terraform/api/Cake.Terraform/TerraformShowRunner',
-        title:"TerraformShowRunner",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Terraform/Cake.Terraform/api/Cake.Terraform/TerraformRunner_1',
-        title:"TerraformRunner<TTerraformSettings>",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Terraform/Cake.Terraform/api/Cake.Terraform/TerraformPlanRunner',
-        title:"TerraformPlanRunner",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Terraform/Cake.Terraform/api/Cake.Terraform/TerraformShowSettings',
-        title:"TerraformShowSettings",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Terraform/Cake.Terraform/api/Cake.Terraform/TerraformDestroyRunner',
-        title:"TerraformDestroyRunner",
+        url:'/Cake.Terraform/Cake.Terraform/api/Cake.Terraform/TerraformSettings',
+        title:"TerraformSettings",
         description:""
     });
 
     y({
         url:'/Cake.Terraform/Cake.Terraform/api/Cake.Terraform/TerraformApplySettings',
         title:"TerraformApplySettings",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Terraform/Cake.Terraform/api/Cake.Terraform/TerraformApplyRunner',
+        title:"TerraformApplyRunner",
         description:""
     });
 
@@ -217,14 +187,44 @@ var searchModule = function() {
     });
 
     y({
-        url:'/Cake.Terraform/Cake.Terraform/api/Cake.Terraform/TerraformApplyRunner',
-        title:"TerraformApplyRunner",
+        url:'/Cake.Terraform/Cake.Terraform/api/Cake.Terraform/TerraformShowRunner',
+        title:"TerraformShowRunner",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Terraform/Cake.Terraform/api/Cake.Terraform/TerraformDestroyRunner',
+        title:"TerraformDestroyRunner",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Terraform/Cake.Terraform/api/Cake.Terraform/TerraformPlanRunner',
+        title:"TerraformPlanRunner",
         description:""
     });
 
     y({
         url:'/Cake.Terraform/Cake.Terraform/api/Cake.Terraform/TerraformAliases',
         title:"TerraformAliases",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Terraform/Cake.Terraform/api/Cake.Terraform/TerraformInitRunner',
+        title:"TerraformInitRunner",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Terraform/Cake.Terraform/api/Cake.Terraform/TerraformShowSettings',
+        title:"TerraformShowSettings",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Terraform/Cake.Terraform/api/Cake.Terraform/TerraformRunner_1',
+        title:"TerraformRunner<TTerraformSettings>",
         description:""
     });
 
