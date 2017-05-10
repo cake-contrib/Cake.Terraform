@@ -50,6 +50,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TerraformApplyRunner.cs" />
     <Compile Include="TerraformApplySettings.cs" />
+    <Compile Include="TerraformDestroyRunner.cs" />
+    <Compile Include="TerraformDestroySettings.cs" />
     <Compile Include="TerraformInitRunner.cs" />
     <Compile Include="TerraformInitSettings.cs" />
     <Compile Include="TerraformPlanRunner.cs" />

@@ -34,5 +34,12 @@ namespace Cake.Terraform
             var runner = new TerraformShowRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
             runner.Run(settings);
         }
+
+        [CakeMethodAlias]
+        public static void TerraformDestroy(this ICakeContext context, TerraformDestroySettings settings)
+        {
+            var runner = new TerraformDestroyRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
+            runner.Run(settings);
+        }
     }
 }
