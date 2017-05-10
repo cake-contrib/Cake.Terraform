@@ -112,4 +112,35 @@ Task("Apply")
     };
     TerraformApply(settings);
 });
+```
 
+## TerraformDestroy
+
+```csharp
+#addin Cake.Terraform
+
+Task("Destroy")
+    .Does(() =>
+{
+    TerraformDestroy();
+});
+```
+
+or, with specific settings:
+
+```csharp
+#addin Cake.Terraform
+
+Task("Destroy")
+    .Does(() =>
+{
+    var settings = new TerraformDestroySettings {
+        WorkingDirectory = ".",
+        Force = true,
+        InputVariables = new Dictionary<string, string> {
+            {"some-input-variable", "value"},
+        }
+    };
+    TerraformDestroy(settings);
+});
+```

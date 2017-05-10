@@ -15,6 +15,9 @@ namespace Cake.Terraform
         /// </summary>
         public Dictionary<string, string> InputVariables { get; set; }
 
+        /// <summary>
+        /// If set to true, generates a plan to destroy all the known resources
+        /// </summary>
         public bool Destroy { get; set; }
     }
 }
