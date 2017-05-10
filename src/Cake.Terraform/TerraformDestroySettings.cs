@@ -13,6 +13,12 @@ namespace Cake.Terraform
         public Dictionary<string, string> InputVariables { get; set; }
 
         /// <summary>
+        /// Variables file
+        /// https://www.terraform.io/docs/configuration/variables.html#variable-files
+        /// </summary>
+        public string InputVarieablesFile { get; set; }
+
+        /// <summary>
         /// If set to true, then the destroy confirmation will not be shown.
         /// </summary>
         public bool Force { get; set; }

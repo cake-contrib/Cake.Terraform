@@ -15,6 +15,11 @@ namespace Cake.Terraform
         {
             var builder = new ProcessArgumentBuilder().Append("apply");
 
+            if (!string.IsNullOrEmpty(settings.InputVarieablesFile))
+            {
+                builder.AppendSwitchQuoted("-var-file", $"{settings.InputVarieablesFile}");
+            }
+
             if (settings.InputVariables != null)
             {
                 foreach (var inputVariable in settings.InputVariables)

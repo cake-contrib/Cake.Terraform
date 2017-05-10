@@ -146,6 +146,26 @@ namespace Cake.Terraform.Tests
             }
 
             [Fact]
+            public void Should_set_input_variables_file()
+            {
+                var fixture = new TerraformPlanFixture
+                {
+                    Settings = new TerraformPlanSettings
+                    {
+                        InputVarieablesFile = "./aws-creds.json",
+                        InputVariables = new Dictionary<string, string>
+                        {
+                            {"access_key", "foo"},
+                            {"secret_key", "bar"}
+                        }
+                    }
+                };
+                var result = fixture.Run();
+
+                Assert.Contains("-var-file \"./aws-creds.json\" -var \"access_key=foo\" -var \"secret_key=bar\"", result.Args);
+            }
+
+            [Fact]
             public void Should_set_destroy_flag_when_set_to_true()
             {
                 var fixture = new TerraformPlanFixture();
