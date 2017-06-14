@@ -13,7 +13,19 @@ namespace Cake.Terraform
 
         public void Run(TerraformInitSettings settings)
         {
-            var builder = new ProcessArgumentBuilder().Append("init");
+            var builder =
+                new ProcessArgumentBuilder()
+                    .Append("init");
+
+            if (settings.BackendConfigOverrides != null)
+            {
+                foreach (var pair in settings.BackendConfigOverrides)
+                {
+                    // https://www.terraform.io/docs/commands/init.html#backend-config-value
+                    builder.AppendSwitchQuoted("-backend-config", $"{pair.Key}={pair.Value}");
+                }
+            }
+
             Run(settings, builder);
         }
     }

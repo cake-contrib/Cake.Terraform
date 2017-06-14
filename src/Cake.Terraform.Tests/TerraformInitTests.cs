@@ -1,4 +1,5 @@
-﻿using Cake.Core;
+﻿using System.Collections.Generic;
+using Cake.Core;
 using Cake.Testing;
 using Xunit;
 
@@ -75,6 +76,26 @@ namespace Cake.Terraform.Tests
                 var result = fixture.Run();
 
                 Assert.Contains("init", result.Args);
+            }
+
+            [Fact]
+            public void Should_pass_backend_config_overrides()
+            {
+                var fixture = new TerraformInitFixture();
+
+                fixture.Settings = new TerraformInitSettings
+                {
+                    BackendConfigOverrides = new Dictionary<string, string>
+                    {
+                        { "key", "value" },
+                        { "foo", "bar" },
+                    }
+                };
+
+                var result = fixture.Run();
+
+                Assert.Contains("-backend-config \"key=value\"", result.Args);
+                Assert.Contains("-backend-config \"foo=bar\"", result.Args);
             }
         }
     }
