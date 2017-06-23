@@ -26,6 +26,16 @@ namespace Cake.Terraform
                 }
             }
 
+            if (settings.ForceCopy)
+            {
+                builder.Append("-force-copy");
+            }
+
+            if (settings.ForceReconfigure)
+            {
+                builder.Append("-reconfigure");
+            }
+
             Run(settings, builder);
         }
     }
