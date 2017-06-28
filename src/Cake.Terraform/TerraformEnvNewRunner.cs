@@ -7,7 +7,7 @@ using Cake.Terraform;
 
 namespace ANW.CakeTools.Terraform
 {
-    public class TerraformEnvNewRunner : TerraformRunner<TerraformEnvNewSettings>, ITerraformEnvNewRunner
+    public class TerraformEnvNewRunner : TerraformRunner<TerraformEnvNewSettings>
     {
         public TerraformEnvNewRunner(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools)
             : base(fileSystem, environment, processRunner, tools)
