@@ -41,5 +41,34 @@ namespace Cake.Terraform
             var runner = new TerraformDestroyRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
             runner.Run(settings);
         }
+
+        [CakeMethodAlias]
+        public static void TerraformEnvDelete(this ICakeContext context, TerraformEnvDeleteSettings settings)
+        {
+            var runner = new TerraformEnvDeleteRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
+            runner.Run(settings);
+        }
+
+         [CakeMethodAlias]
+        public static void TerraformEnvList(this ICakeContext context, TerraformEnvListSettings settings)
+        {
+            var runner = new TerraformEnvListRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
+            runner.Run(settings);
+        }
+
+        [CakeMethodAlias]
+        public static void TerraformEnvNew(this ICakeContext context, TerraformEnvNewSettings settings)
+        {
+            var runner = new TerraformEnvNewRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
+            runner.Run(settings);
+        }
+
+        [CakeMethodAlias]
+        public static void TerraformEnvSelect(this ICakeContext context, TerraformEnvSelectSettings settings)
+        {
+            var runner = new TerraformEnvSelectRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
+            runner.Run(settings);
+        }
+
     }
 }
