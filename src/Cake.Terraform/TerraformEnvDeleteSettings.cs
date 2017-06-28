@@ -2,7 +2,7 @@ using System;
 using Cake.Core.IO;
 using Cake.Terraform;
 
-namespace ANW.CakeTools.Terraform
+namespace Cake.Terraform
 {
     public class TerraformEnvDeleteSettings : TerraformSettings
     {

@@ -1,6 +1,6 @@
 using Cake.Terraform;
 
-namespace ANW.CakeTools.Terraform
+namespace Cake.Terraform
 {
     public class TerraformEnvListSettings : TerraformSettings
     {
