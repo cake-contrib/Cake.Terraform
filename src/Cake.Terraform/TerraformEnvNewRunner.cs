@@ -5,7 +5,7 @@ using Cake.Core.IO;
 using Cake.Core.Tooling;
 using Cake.Terraform;
 
-namespace ANW.CakeTools.Terraform
+namespace Cake.Terraform
 {
     public class TerraformEnvNewRunner : TerraformRunner<TerraformEnvNewSettings>
     {
