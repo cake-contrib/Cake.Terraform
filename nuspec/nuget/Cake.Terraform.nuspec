@@ -15,8 +15,8 @@
     <tags>Cake, Script, Build, Terraform, Hashicorp</tags>
   </metadata>
   <files>
-    <file src="net452\Cake.Terraform.dll" target="lib\net452" />
-    <file src="net452\Cake.Terraform.pdb" target="lib\net452" />
+    <file src="net45\Cake.Terraform.dll" target="lib\net45" />
+    <file src="net45\Cake.Terraform.pdb" target="lib\net45" />
     <file src="netstandard1.6\Cake.Terraform.dll" target="lib\netstandard1.6" />
     <file src="netstandard1.6\Cake.Terraform.pdb" target="lib\netstandard1.6" />
   </files>
