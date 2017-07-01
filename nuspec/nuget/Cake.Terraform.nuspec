@@ -9,12 +9,15 @@
     <summary>Cake AddIn that extends Cake with ability to execute terraform commands.</summary>
     <licenseUrl>https://github.com/erikvanbrakel/Cake.Terraform/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/erikvanbrakel/Cake.Terraform/</projectUrl>
+    <iconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <copyright>Copyright (c) 2017 - Present</copyright>
     <tags>Cake, Script, Build, Terraform, Hashicorp</tags>
   </metadata>
   <files>
-    <file src="Cake.Terraform.dll" target="lib\net45" />
-    <file src="Cake.Terraform.pdb" target="lib\net45" />
+    <file src="net45\Cake.Terraform.dll" target="lib\net45" />
+    <file src="net45\Cake.Terraform.pdb" target="lib\net45" />
+    <file src="netstandard1.6\Cake.Terraform.dll" target="lib\netstandard1.6" />
+    <file src="netstandard1.6\Cake.Terraform.pdb" target="lib\netstandard1.6" />
   </files>
 </package>

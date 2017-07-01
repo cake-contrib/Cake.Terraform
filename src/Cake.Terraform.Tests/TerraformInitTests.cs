@@ -1,4 +1,5 @@
-﻿using Cake.Core;
+﻿using System.Collections.Generic;
+using Cake.Core;
 using Cake.Testing;
 using Xunit;
 
@@ -75,6 +76,78 @@ namespace Cake.Terraform.Tests
                 var result = fixture.Run();
 
                 Assert.Contains("init", result.Args);
+            }
+
+            [Fact]
+            public void Should_pass_backend_config_overrides()
+            {
+                var fixture = new TerraformInitFixture();
+
+                fixture.Settings = new TerraformInitSettings
+                {
+                    BackendConfigOverrides = new Dictionary<string, string>
+                    {
+                        { "key", "value" },
+                        { "foo", "bar" },
+                    }
+                };
+
+                var result = fixture.Run();
+
+                Assert.Contains("-backend-config \"key=value\"", result.Args);
+                Assert.Contains("-backend-config \"foo=bar\"", result.Args);
+            }
+            
+            [Fact]
+            public void Should_omit_reconfigure_flag_by_default()
+            {
+                var fixture = new TerraformInitFixture();
+
+                var result = fixture.Run();
+
+                Assert.DoesNotContain("-reconfigure", result.Args);
+            }
+            
+            [Fact]
+            public void Should_include_reconfigure_flag_when_setting_is_true()
+            {
+                var fixture = new TerraformInitFixture
+                {
+                    Settings = new TerraformInitSettings
+                    {
+                        ForceReconfigure = true
+                    }
+                };
+
+                var result = fixture.Run();
+
+                Assert.Contains("-reconfigure", result.Args);
+            }
+            
+            [Fact]
+            public void Should_omit_force_copy_flag_by_default()
+            {
+                var fixture = new TerraformInitFixture();
+
+                var result = fixture.Run();
+
+                Assert.DoesNotContain("-force-copy", result.Args);
+            }
+            
+            [Fact]
+            public void Should_include_force_copy_flag_when_setting_is_true()
+            {
+                var fixture = new TerraformInitFixture
+                {
+                    Settings = new TerraformInitSettings
+                    {
+                        ForceCopy = true
+                    }
+                };
+
+                var result = fixture.Run();
+
+                Assert.Contains("-force-copy", result.Args);
             }
         }
     }
