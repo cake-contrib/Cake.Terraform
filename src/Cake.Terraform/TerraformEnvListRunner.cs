@@ -32,6 +32,7 @@ namespace Cake.Terraform
             {
                 result = x.GetStandardOutput()
                     .Select(env => env.Replace("*", "").Trim())
+                    .Where(env => !string.IsNullOrWhiteSpace(env))
                     .ToList();
             });
 
