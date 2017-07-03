@@ -1,4 +1,5 @@
-﻿using Cake.Core;
+﻿using System.Collections.Generic;
+using Cake.Core;
 using Cake.Core.Annotations;
 
 namespace Cake.Terraform
@@ -50,10 +51,10 @@ namespace Cake.Terraform
         }
 
          [CakeMethodAlias]
-        public static void TerraformEnvList(this ICakeContext context, TerraformEnvListSettings settings)
+        public static List<string> TerraformEnvList(this ICakeContext context, TerraformEnvListSettings settings)
         {
             var runner = new TerraformEnvListRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
-            runner.Run(settings);
+            return runner.Run(settings);
         }
 
         [CakeMethodAlias]
