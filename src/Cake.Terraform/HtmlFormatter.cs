@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Net;
 
 namespace Cake.Terraform
 {
@@ -73,12 +74,12 @@ namespace Cake.Terraform
             {
                 var match = regex.Match(line);
                 if(match.Success) {
-                    var styledLine = $"{match.Groups[1].Value}<span class=\"{_styles[match.Groups[2].Value]}\">{match.Groups[3].Value}</span>";
+                    var styledLine = $"{WebUtility.HtmlEncode(match.Groups[1].Value)}<span class=\"{_styles[match.Groups[2].Value]}\">{WebUtility.HtmlEncode(match.Groups[3].Value)}</span>";
                     outputBuilder.AppendLine(styledLine);
                 }
                 else
                 {
-                    outputBuilder.AppendLine(line);
+                    outputBuilder.AppendLine(WebUtility.HtmlEncode(line));
                 }
             }
 

@@ -3,7 +3,6 @@ using System.Linq;
 using Cake.Core;
 using Cake.Core.IO;
 using Cake.Core.Tooling;
-using Cake.Terraform;
 
 namespace Cake.Terraform
 {
@@ -18,10 +17,8 @@ namespace Cake.Terraform
         {
             var builder =
                 new ProcessArgumentBuilder()
-                    .Append("env")
+                    .Append("workspace")
                     .Append("list");
-
-            Run(settings, builder);
 
             var processSettings = new ProcessSettings
             {
@@ -33,6 +30,7 @@ namespace Cake.Terraform
             {
                 result = x.GetStandardOutput()
                     .Select(env => env.Replace("*", "").Trim())
+                    .Where(env => !string.IsNullOrWhiteSpace(env))
                     .ToList();
             });
 
