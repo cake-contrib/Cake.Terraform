@@ -1,9 +1,7 @@
 using System;
-using System.Collections.Generic;
 using Cake.Core;
 using Cake.Core.IO;
 using Cake.Core.Tooling;
-using Cake.Terraform;
 
 namespace Cake.Terraform
 {
@@ -13,6 +11,7 @@ namespace Cake.Terraform
             : base(fileSystem, environment, processRunner, tools)
         {
         }
+
         public void Run(TerraformEnvNewSettings newSettings)
         {
             if (string.IsNullOrEmpty(newSettings.Environment))
@@ -22,7 +21,7 @@ namespace Cake.Terraform
 
             var builder =
                 new ProcessArgumentBuilder()
-                    .Append("env")
+                    .Append("workspace")
                     .Append("new")
                     .Append(newSettings.Environment);
 

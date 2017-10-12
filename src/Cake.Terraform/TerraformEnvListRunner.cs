@@ -17,10 +17,8 @@ namespace Cake.Terraform
         {
             var builder =
                 new ProcessArgumentBuilder()
-                    .Append("env")
+                    .Append("workspace")
                     .Append("list");
-
-            Run(settings, builder);
 
             var processSettings = new ProcessSettings
             {
