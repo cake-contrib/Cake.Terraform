@@ -13,7 +13,8 @@ namespace Cake.Terraform
 
         public void Run(TerraformApplySettings settings)
         {
-            var builder = new ProcessArgumentBuilder().Append("apply");
+            var builder = new ProcessArgumentBuilder()
+                .Append("apply");
 
             if (!string.IsNullOrEmpty(settings.InputVariablesFile))
             {
@@ -26,6 +27,11 @@ namespace Cake.Terraform
                 {
                     builder.AppendSwitchQuoted("-var", $"{inputVariable.Key}={inputVariable.Value}");
                 }
+            }
+
+            if (settings.AutoApprove)
+            {
+                builder.Append("-auto-approve");
             }
 
             Run(settings, builder);

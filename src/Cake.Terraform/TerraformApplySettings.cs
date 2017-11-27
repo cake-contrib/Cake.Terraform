@@ -20,5 +20,11 @@ namespace Cake.Terraform
         /// https://www.terraform.io/docs/configuration/variables.html#variable-files
         /// </summary>
         public string InputVariablesFile { get; set; }
+
+        /// <summary>
+        /// Skip interactive approval of plan before applying.
+        /// https://www.terraform.io/docs/commands/apply.html#auto-approve
+        /// </summary>
+        public bool AutoApprove { get; set; }
     }
 }
