@@ -25,7 +25,7 @@ namespace Cake.Terraform
             // Use Plan if it exists.
             if (settings.Plan != null)
             {
-                builder.Append(settings.Plan);
+                builder.Append(settings.Plan.FullPath);
             }
 
             if (!string.IsNullOrEmpty(settings.InputVariablesFile))
