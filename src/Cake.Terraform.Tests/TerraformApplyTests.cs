@@ -60,7 +60,7 @@ namespace Cake.Terraform.Tests
             [Fact]
             public void Should_find_linux_executable()
             {
-                var fixture = new TerraformPlanFixture(PlatformFamily.Linux);
+                var fixture = new TerraformApplyFixture(PlatformFamily.Linux);
                 fixture.Environment.Platform.Family = PlatformFamily.Linux;
 
 

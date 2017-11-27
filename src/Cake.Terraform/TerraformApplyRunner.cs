@@ -16,6 +16,18 @@ namespace Cake.Terraform
             var builder = new ProcessArgumentBuilder()
                 .Append("apply");
 
+            // Order of AutoApprove and Plan are important.
+            if (settings.AutoApprove)
+            {
+                builder.Append("-auto-approve");
+            }
+
+            // Use Plan if it exists.
+            if (settings.Plan != null)
+            {
+                builder.Append(settings.Plan);
+            }
+
             if (!string.IsNullOrEmpty(settings.InputVariablesFile))
             {
                 builder.AppendSwitchQuoted("-var-file", $"{settings.InputVariablesFile}");
@@ -27,11 +39,6 @@ namespace Cake.Terraform
                 {
                     builder.AppendSwitchQuoted("-var", $"{inputVariable.Key}={inputVariable.Value}");
                 }
-            }
-
-            if (settings.AutoApprove)
-            {
-                builder.Append("-auto-approve");
             }
 
             Run(settings, builder);
