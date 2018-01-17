@@ -28,6 +28,16 @@ namespace Cake.Terraform
                 }
             }
 
+            if (settings.Parallelism != default(int))
+            {
+                builder.AppendSwitch("-parallelism", "=", settings.Parallelism.ToString());
+            }
+
+            if (settings.Plan != null)
+            {
+                builder.AppendQuoted(settings.Plan.ToString());
+            }
+
             Run(settings, builder);
         }
     }

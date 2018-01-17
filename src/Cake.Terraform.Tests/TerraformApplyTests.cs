@@ -115,6 +115,36 @@ namespace Cake.Terraform.Tests
 
                 Assert.Contains("-var-file \"./aws-creds.json\" -var \"access_key=foo\" -var \"secret_key=bar\"", result.Args);
             }
+
+            [Fact]
+            public void Should_set_plan_path()
+            {
+                var fixture = new TerraformApplyFixture
+                {
+                    Settings = new TerraformApplySettings
+                    {
+                        Plan = "plan.out",
+                    }
+                };
+                var result = fixture.Run();
+
+                Assert.Equal("apply \"plan.out\"", result.Args);
+            }
+
+            [Fact]
+            public void Should_set_parallelism()
+            {
+                var fixture = new TerraformApplyFixture
+                {
+                    Settings = new TerraformApplySettings
+                    {
+                        Parallelism = 42,
+                    }
+                };
+                var result = fixture.Run();
+
+                Assert.Contains("-parallelism=42", result.Args);
+            }
         }
     }
 }
