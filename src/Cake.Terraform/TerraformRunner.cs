@@ -22,10 +22,7 @@ namespace Cake.Terraform
 
         protected override IEnumerable<string> GetToolExecutableNames()
         {
-
-            return new []  { _platform.IsUnix() ? "terraform" : "terraform.exe" };
+            return new[] { _platform.IsUnix() ? "terraform" : "terraform.exe" };
         }
-
-
     }
 }

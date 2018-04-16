@@ -60,7 +60,7 @@ namespace Cake.Terraform.Tests
             [Fact]
             public void Should_find_linux_executable()
             {
-                var fixture = new TerraformPlanFixture(PlatformFamily.Linux);
+                var fixture = new TerraformApplyFixture(PlatformFamily.Linux);
                 fixture.Environment.Platform.Family = PlatformFamily.Linux;
 
 
@@ -114,6 +114,20 @@ namespace Cake.Terraform.Tests
                 var result = fixture.Run();
 
                 Assert.Contains("-var-file \"./aws-creds.json\" -var \"access_key=foo\" -var \"secret_key=bar\"", result.Args);
+            }
+
+            [Fact]
+            public void Should_Append_Auto_Approve_When_AutoApprove_Is_True()
+            {
+                var fixture = new TerraformApplyFixture {
+                    Settings = new TerraformApplySettings {
+                        AutoApprove = true
+                    }
+                };
+
+                var result = fixture.Run();
+
+                Assert.Contains("-auto-approve", result.Args);
             }
         }
     }
