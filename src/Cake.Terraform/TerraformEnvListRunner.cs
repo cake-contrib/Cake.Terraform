@@ -26,7 +26,7 @@ namespace Cake.Terraform
             };
 
             var result = new List<string>();
-            this.Run(settings, builder, processSettings, x =>
+            Run(settings, builder, processSettings, x =>
             {
                 result = x.GetStandardOutput()
                     .Select(env => env.Replace("*", "").Trim())

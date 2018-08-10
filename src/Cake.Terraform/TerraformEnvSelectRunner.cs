@@ -2,7 +2,6 @@ using System;
 using Cake.Core;
 using Cake.Core.IO;
 using Cake.Core.Tooling;
-using Cake.Terraform;
 
 namespace Cake.Terraform
 {
@@ -16,7 +15,7 @@ namespace Cake.Terraform
         {
             var builder =
                 new ProcessArgumentBuilder()
-                    .Append("env");
+                    .Append("workspace");
 
             builder = builder.Append("select");
 

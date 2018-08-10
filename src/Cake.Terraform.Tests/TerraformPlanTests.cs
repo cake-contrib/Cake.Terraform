@@ -62,7 +62,7 @@ namespace Cake.Terraform.Tests
                 var fixture = new TerraformPlanFixture();
                 fixture.GivenProcessExitsWithCode(0);
 
-                var result = fixture.Run();
+                fixture.Run();
 
                 Assert.False(fixture.HasChanges);
             }
@@ -85,7 +85,7 @@ namespace Cake.Terraform.Tests
                 var fixture = new TerraformPlanFixture();
                 fixture.GivenProcessExitsWithCode(2);
 
-                var result = fixture.Run();
+                fixture.Run();
 
                 Assert.True(fixture.HasChanges);
             }
@@ -112,8 +112,7 @@ namespace Cake.Terraform.Tests
             [Fact]
             public void Should_set_parallelism()
             {
-                var fixture = new TerraformPlanFixture();
-                fixture.Settings = new TerraformPlanSettings {Parallelism = 10};
+                var fixture = new TerraformPlanFixture {Settings = new TerraformPlanSettings {Parallelism = 10}};
                 var result = fixture.Run();
 
                 Assert.Contains("-parallelism=10", result.Args);
@@ -131,13 +130,15 @@ namespace Cake.Terraform.Tests
             [Fact]
             public void Should_set_input_variables()
             {
-                var fixture = new TerraformPlanFixture();
-                fixture.Settings = new TerraformPlanSettings
+                var fixture = new TerraformPlanFixture
                 {
-                    InputVariables = new Dictionary<string, string>
+                    Settings = new TerraformPlanSettings
                     {
-                        { "access_key", "foo" },
-                        { "secret_key", "bar" }
+                        InputVariables = new Dictionary<string, string>
+                        {
+                            {"access_key", "foo"},
+                            {"secret_key", "bar"}
+                        }
                     }
                 };
                 var result = fixture.Run();
@@ -168,10 +169,12 @@ namespace Cake.Terraform.Tests
             [Fact]
             public void Should_set_destroy_flag_when_set_to_true()
             {
-                var fixture = new TerraformPlanFixture();
-                fixture.Settings = new TerraformPlanSettings
+                var fixture = new TerraformPlanFixture
                 {
-                    Destroy = true
+                    Settings = new TerraformPlanSettings
+                    {
+                        Destroy = true
+                    }
                 };
                 var result = fixture.Run();
 
@@ -181,10 +184,12 @@ namespace Cake.Terraform.Tests
             [Fact]
             public void Should_not_set_destroy_flag_if_set_to_false()
             {
-                var fixture = new TerraformPlanFixture();
-                fixture.Settings = new TerraformPlanSettings
+                var fixture = new TerraformPlanFixture
                 {
-                    Destroy = false
+                    Settings = new TerraformPlanSettings
+                    {
+                        Destroy = false
+                    }
                 };
                 var result = fixture.Run();
 
