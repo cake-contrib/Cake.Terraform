@@ -13,7 +13,20 @@ namespace Cake.Terraform
 
         public void Run(TerraformApplySettings settings)
         {
-            var builder = new ProcessArgumentBuilder().Append("apply");
+            var builder = new ProcessArgumentBuilder()
+                .Append("apply");
+
+            // Order of AutoApprove and Plan are important.
+            if (settings.AutoApprove)
+            {
+                builder.Append("-auto-approve");
+            }
+
+            // Use Plan if it exists.
+            if (settings.Plan != null)
+            {
+                builder.Append(settings.Plan.FullPath);
+            }
 
             if (!string.IsNullOrEmpty(settings.InputVariablesFile))
             {
