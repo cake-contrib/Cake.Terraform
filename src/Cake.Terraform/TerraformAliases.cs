@@ -71,5 +71,11 @@ namespace Cake.Terraform
             runner.Run(settings);
         }
 
+        [CakeMethodAlias]
+        public static void TerraformRefresh(this ICakeContext context, TerraformRefreshSettings settings)
+        {
+            var runner = new TerraformRefreshRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
+            runner.Run(settings);
+        }
     }
 }
