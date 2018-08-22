@@ -1,6 +1,16 @@
 ﻿using System.Collections.Generic;
 using Cake.Core;
 using Cake.Core.Annotations;
+using Cake.Terraform.Apply;
+using Cake.Terraform.Destroy;
+using Cake.Terraform.EnvDelete;
+using Cake.Terraform.EnvList;
+using Cake.Terraform.EnvNew;
+using Cake.Terraform.EnvSelect;
+using Cake.Terraform.Init;
+using Cake.Terraform.Plan;
+using Cake.Terraform.Refresh;
+using Cake.Terraform.Show;
 
 namespace Cake.Terraform
 {
@@ -8,10 +18,22 @@ namespace Cake.Terraform
     public static class TerraformAliases
     {
         [CakeMethodAlias]
+        public static void TerraformInit(this ICakeContext context)
+        {
+            TerraformInit(context, new TerraformInitSettings());
+        }
+
+        [CakeMethodAlias]
         public static void TerraformInit(this ICakeContext context, TerraformInitSettings settings)
         {
             var runner = new TerraformInitRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
             runner.Run(settings);
+        }
+
+        [CakeMethodAlias]
+        public static bool TerraformPlan(this ICakeContext context)
+        {
+            return TerraformPlan(context, new TerraformPlanSettings());
         }
 
         [CakeMethodAlias]
@@ -23,10 +45,22 @@ namespace Cake.Terraform
         }
 
         [CakeMethodAlias]
+        public static void TerraformApply(this ICakeContext context)
+        {
+            TerraformApply(context, new TerraformApplySettings());
+        }
+
+        [CakeMethodAlias]
         public static void TerraformApply(this ICakeContext context, TerraformApplySettings settings)
         {
             var runner = new TerraformApplyRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
             runner.Run(settings);
+        }
+
+        [CakeMethodAlias]
+        public static void TerraformShow(this ICakeContext context)
+        {
+            TerraformShow(context, new TerraformShowSettings());
         }
 
         [CakeMethodAlias]
@@ -37,10 +71,22 @@ namespace Cake.Terraform
         }
 
         [CakeMethodAlias]
+        public static void TerraformDestroy(this ICakeContext context)
+        {
+            TerraformDestroy(context, new TerraformDestroySettings());
+        }
+
+        [CakeMethodAlias]
         public static void TerraformDestroy(this ICakeContext context, TerraformDestroySettings settings)
         {
             var runner = new TerraformDestroyRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
             runner.Run(settings);
+        }
+
+        [CakeMethodAlias]
+        public static void TerraformEnvDelete(this ICakeContext context)
+        {
+            TerraformEnvDelete(context, new TerraformEnvDeleteSettings());
         }
 
         [CakeMethodAlias]
@@ -50,11 +96,23 @@ namespace Cake.Terraform
             runner.Run(settings);
         }
 
-         [CakeMethodAlias]
+        [CakeMethodAlias]
+        public static void TerraformEnvList(this ICakeContext context)
+        {
+            TerraformEnvList(context, new TerraformEnvListSettings());
+        }
+
+        [CakeMethodAlias]
         public static List<string> TerraformEnvList(this ICakeContext context, TerraformEnvListSettings settings)
         {
             var runner = new TerraformEnvListRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
             return runner.Run(settings);
+        }
+
+        [CakeMethodAlias]
+        public static void TerraformEnvNew(this ICakeContext context, string environment)
+        {
+            TerraformEnvNew(context, new TerraformEnvNewSettings { Environment = environment });
         }
 
         [CakeMethodAlias]
@@ -65,10 +123,22 @@ namespace Cake.Terraform
         }
 
         [CakeMethodAlias]
+        public static void TerraformEnvSelect(this ICakeContext context, string environment)
+        {
+            TerraformEnvSelect(context, new TerraformEnvSelectSettings { Environment = environment });
+        }
+
+        [CakeMethodAlias]
         public static void TerraformEnvSelect(this ICakeContext context, TerraformEnvSelectSettings settings)
         {
             var runner = new TerraformEnvSelectRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
             runner.Run(settings);
+        }
+
+        [CakeMethodAlias]
+        public static void TerraformRefresh(this ICakeContext context)
+        {
+            TerraformRefresh(context, new TerraformRefreshSettings());
         }
 
         [CakeMethodAlias]
