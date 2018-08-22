@@ -6,12 +6,12 @@ BuildParameters.SetParameters(context: Context,
                             buildSystem: BuildSystem,
                             sourceDirectoryPath: "./src",
                             title: "Cake.Terraform",
-                            repositoryOwner: "erikvanbrakel",
+                            repositoryOwner: "cake-contrib",
                             repositoryName: "Cake.Terraform",
-                            appVeyorAccountName: "erikvanbrakel",
-                            webHost: "erikvanbrakel.github.io",
+                            appVeyorAccountName: "cake-contrib",
+                            webHost: "cake-contrib.github.io",
                             webLinkRoot: "Cake.Terraform",
-                            webBaseEditUrl: "https://github.com/erikvanbrakel/Cake.Terraform/tree/develop/docs/input"
+                            webBaseEditUrl: "https://github.com/cake-contrib/Cake.Terraform/tree/develop/docs/input"
                             );
 
 BuildParameters.PrintParameters(Context);
