@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cake.Core">
+    <PackageReference Include="Cake.Core" PrivateAssets="All">
       <Version>0.22.0</Version>
     </PackageReference>
   </ItemGroup>
