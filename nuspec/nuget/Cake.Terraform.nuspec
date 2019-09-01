@@ -7,17 +7,18 @@
     <owners>Erik van Brakel</owners>
     <description>Cake Terraform Addin.</description>
     <summary>Cake AddIn that extends Cake with ability to execute terraform commands.</summary>
-    <licenseUrl>https://github.com/erikvanbrakel/Cake.Terraform/blob/master/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/erikvanbrakel/Cake.Terraform/</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</iconUrl>
+    <projectUrl>https://github.com/cake-contrib/Cake.Terraform/</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <repository type="git" url="https://github.com/cake-contrib/Cake.Terraform.git"/>
     <copyright>Copyright (c) 2017 - Present</copyright>
     <tags>Cake, Script, Build, Terraform, Hashicorp</tags>
   </metadata>
   <files>
     <file src="net461\Cake.Terraform.dll" target="lib\net461" />
     <file src="net461\Cake.Terraform.pdb" target="lib\net461" />
-    <file src="netstandard1.6\Cake.Terraform.dll" target="lib\netstandard1.6" />
-    <file src="netstandard1.6\Cake.Terraform.pdb" target="lib\netstandard1.6" />
+    <file src="netstandard2.0\Cake.Terraform.dll" target="lib\netstandard2.0" />
+    <file src="netstandard2.0\Cake.Terraform.pdb" target="lib\netstandard2.0" />
   </files>
 </package>
