@@ -18,7 +18,7 @@
   <files>
     <file src="net461\Cake.Terraform.dll" target="lib\net461" />
     <file src="net461\Cake.Terraform.pdb" target="lib\net461" />
-    <file src="netstandard1.6\Cake.Terraform.dll" target="lib\netstandard1.6" />
-    <file src="netstandard1.6\Cake.Terraform.pdb" target="lib\netstandard1.6" />
+    <file src="netstandard2.0\Cake.Terraform.dll" target="lib\netstandard2.0" />
+    <file src="netstandard2.0\Cake.Terraform.pdb" target="lib\netstandard2.0" />
   </files>
 </package>
