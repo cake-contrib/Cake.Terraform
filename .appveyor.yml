@@ -24,7 +24,7 @@ branches:
 #---------------------------------#
 cache:
 - Source\packages -> Source\**\packages.config
-- tools -> setup.cake
+- tools -> recipe.cake
 
 environment:
   WYAM_DEPLOY_REMOTE: https://github.com/erikvanbrakel/Cake.Terraform
