@@ -7,7 +7,7 @@
     <owners>Erik van Brakel</owners>
     <description>Cake Terraform Addin.</description>
     <summary>Cake AddIn that extends Cake with ability to execute terraform commands.</summary>
-    <projectUrl>https://github.com/erikvanbrakel/Cake.Terraform/</projectUrl>
+    <projectUrl>https://github.com/cake-contrib/Cake.Terraform/</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
