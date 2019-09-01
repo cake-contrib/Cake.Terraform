@@ -26,7 +26,12 @@ namespace Cake.Terraform.Apply
             // Use Plan if it exists.
             if (settings.Plan != null)
             {
-                builder.Append(settings.Plan.FullPath);
+                builder.AppendQuoted(settings.Plan.FullPath);
+            }
+
+            if (settings.Parallelism != default(int))
+            {
+                builder.AppendSwitch("-parallelism", "=", settings.Parallelism.ToString());
             }
 
             if (!string.IsNullOrWhiteSpace(settings.InputVariablesFile))

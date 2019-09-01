@@ -141,6 +141,36 @@ namespace Cake.Terraform.Tests
 
                 Assert.Contains("-auto-approve", result.Args);
             }
+
+            [Fact]
+            public void Should_set_plan_path()
+            {
+                var fixture = new Fixture
+                {
+                    Settings = new TerraformApplySettings {
+                        Plan = "plan.out"
+                    }
+                };
+
+                var result = fixture.Run();
+
+                 Assert.Equal("apply \"plan.out\"", result.Args);
+            }
+
+             [Fact]
+            public void Should_set_parallelism()
+            {
+                var fixture = new Fixture
+                {
+                    Settings = new TerraformApplySettings {
+                        Parallelism = 42
+                    }
+                };
+
+                var result = fixture.Run();
+
+                Assert.Contains("-parallelism=42", result.Args);
+            }
         }
     }
 }
