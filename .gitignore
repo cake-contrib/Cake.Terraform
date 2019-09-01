@@ -274,3 +274,4 @@ __pycache__/
 tools/**
 !tools/packages.config
 BuildArtifacts/
+.DS_Store
