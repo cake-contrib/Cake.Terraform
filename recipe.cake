@@ -12,7 +12,7 @@ BuildParameters.SetParameters(context: Context,
                             webHost: "cake-contrib.github.io",
                             webLinkRoot: "Cake.Terraform",
                             webBaseEditUrl: "https://github.com/cake-contrib/Cake.Terraform/tree/develop/docs/input"
-                            );
+                            shouldRunGitVersion: true);
 
 BuildParameters.PrintParameters(Context);
 
