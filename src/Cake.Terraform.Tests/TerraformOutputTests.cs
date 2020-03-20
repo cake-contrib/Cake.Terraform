@@ -156,6 +156,31 @@ namespace Cake.Terraform.Tests
                     "The output variable requested could not be found in the state\nfile. If you recently added this to your configuration, be\nsure to run `terraform apply`, since the state won't be updated\nwith new output variables until that command is run.\n", 
                     exception.Message);
             }
+            
+            [Fact]
+            public void Should_not_raise_exception_if_output_not_found_and_validation_disabled()
+            {
+                var fixture = new Fixture
+                {
+                    ToolOutput = new List<string>
+                    {
+                        "The output variable requested could not be found in the state",
+                        "file. If you recently added this to your configuration, be",
+                        "sure to run `terraform apply`, since the state won't be updated",
+                        "with new output variables until that command is run."
+                    },
+                    Settings = new TerraformOutputSettings
+                    {
+                        ValidateToolOutput = false
+                    }
+                };
+
+                fixture.Run();
+                
+                Assert.Equal(
+                    "The output variable requested could not be found in the state\nfile. If you recently added this to your configuration, be\nsure to run `terraform apply`, since the state won't be updated\nwith new output variables until that command is run.\n", 
+                    fixture.Outputs);
+            }
         }
     }
 }
