@@ -94,7 +94,7 @@ namespace Cake.Terraform.Tests
 
                 var result = fixture.Run();
                 
-                Assert.Equal("output", result.Args);
+                Assert.Equal("output -no-color", result.Args);
             }
 
             [Fact]
@@ -104,7 +104,7 @@ namespace Cake.Terraform.Tests
 
                 var result = fixture.Run();
                 
-                Assert.Equal("output -json", result.Args);
+                Assert.Equal("output -no-color -json", result.Args);
             }
             
             [Fact]
@@ -114,7 +114,7 @@ namespace Cake.Terraform.Tests
 
                 var result = fixture.Run();
                 
-                Assert.Equal("output -state=some_path", result.Args);
+                Assert.Equal("output -no-color -state=some_path", result.Args);
             }
             
             [Fact]
@@ -124,7 +124,7 @@ namespace Cake.Terraform.Tests
 
                 var result = fixture.Run();
                 
-                Assert.Equal("output some_output", result.Args);
+                Assert.Equal("output -no-color some_output", result.Args);
             }
             
             [Fact]
@@ -132,9 +132,29 @@ namespace Cake.Terraform.Tests
             {
                 var fixture = new Fixture();
 
-                var result = fixture.Run();
+                fixture.Run();
                 
                 Assert.Equal("foo = 123\nbar = abc\n", fixture.Outputs);
+            }
+            
+            [Fact]
+            public void Should_raise_exception_if_output_not_found()
+            {
+                var fixture = new Fixture
+                {
+                    ToolOutput = new List<string>
+                    {
+                        "The output variable requested could not be found in the state",
+                        "file. If you recently added this to your configuration, be",
+                        "sure to run `terraform apply`, since the state won't be updated",
+                        "with new output variables until that command is run."
+                    }
+                };
+
+                var exception = Assert.Throws<ArgumentException>(() => fixture.Run());
+                Assert.Equal(
+                    "The output variable requested could not be found in the state\nfile. If you recently added this to your configuration, be\nsure to run `terraform apply`, since the state won't be updated\nwith new output variables until that command is run.\n", 
+                    exception.Message);
             }
         }
     }

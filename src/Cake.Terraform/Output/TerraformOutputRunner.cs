@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,10 +16,29 @@ namespace Cake.Terraform.Output
         {
         }
 
+        private static string RemoveWhitespace(string x)
+        {
+            return x
+                .Replace("\n", "")
+                .Replace("\r", "")
+                .Replace(" ", "");
+        }
+        
+        private void ConfirmSuccess(string output)
+        {
+            string outputNotFoundErrorString = RemoveWhitespace("The output variable requested could not be found in the state file. If you recently added this to your configuration, be sure to run `terraform apply`, since the state won't be updated with new output variables until that command is run.");
+
+            if (RemoveWhitespace(output) == outputNotFoundErrorString)
+            {
+                throw new ArgumentException(output);
+            }
+        }
+
         public string Run(TerraformOutputSettings settings)
         {
             var arguments = new ProcessArgumentBuilder()
-                .Append("output");
+                .Append("output")
+                .Append("-no-color");
 
             if (settings.StatePath != null)
             {
@@ -50,6 +70,8 @@ namespace Cake.Terraform.Output
                 output = builder.ToString();
             });
 
+            ConfirmSuccess(output);
+            
             return output;
         }
     }
