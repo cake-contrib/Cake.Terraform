@@ -80,17 +80,50 @@ namespace Cake.Terraform.Tests
             {
                 var fixture = new Fixture(PlatformFamily.Linux);
                 fixture.Environment.Platform.Family = PlatformFamily.Linux;
-
-
+                
                 var result = fixture.Run();
 
                 Assert.Equal("/Working/tools/terraform", result.Path.FullPath);
             }
+            
+            [Fact]
+            public void Should_call_only_command_if_no_settings_specified()
+            {
+                var fixture = new Fixture();
+
+                var result = fixture.Run();
+                
+                Assert.Equal("output", result.Args);
+            }
 
             [Fact]
-            public void Should_return_json_if_specified()
+            public void Should_request_json_if_specified()
             {
+                var fixture = new Fixture { Settings = new TerraformOutputSettings { Json = true } };
+
+                var result = fixture.Run();
                 
+                Assert.Equal("output -json", result.Args);
+            }
+            
+            [Fact]
+            public void Should_request_specific_state_path_if_specified()
+            {
+                var fixture = new Fixture { Settings = new TerraformOutputSettings { StatePath = "some_path"} };
+
+                var result = fixture.Run();
+                
+                Assert.Equal("output -state=some_path", result.Args);
+            }
+            
+            [Fact]
+            public void Should_request_particular_output_if_specified()
+            {
+                var fixture = new Fixture { Settings = new TerraformOutputSettings { OutputName = "some_output"} };
+
+                var result = fixture.Run();
+                
+                Assert.Equal("output some_output", result.Args);
             }
         }
     }
