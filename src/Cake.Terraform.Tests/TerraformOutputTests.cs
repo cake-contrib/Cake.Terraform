@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Cake.Core;
 using Cake.Terraform.EnvList;
 using Cake.Terraform.Output;
@@ -13,7 +14,7 @@ namespace Cake.Terraform.Tests
         {
             public Fixture(PlatformFamily platformFamily = PlatformFamily.Windows) : base(platformFamily) { }
 
-            public List<string> ToolOutput { get; set; } = new List<string>();
+            public List<string> ToolOutput { get; set; } = new List<string> { "foo = 123", "bar = abc" };
             public string Outputs { get; private set; } = null;
 
             protected override void RunTool()
@@ -124,6 +125,16 @@ namespace Cake.Terraform.Tests
                 var result = fixture.Run();
                 
                 Assert.Equal("output some_output", result.Args);
+            }
+            
+            [Fact]
+            public void Should_combine_output_lines_into_string()
+            {
+                var fixture = new Fixture();
+
+                var result = fixture.Run();
+                
+                Assert.Equal("foo = 123\nbar = abc\n", fixture.Outputs);
             }
         }
     }

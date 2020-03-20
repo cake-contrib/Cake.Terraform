@@ -43,7 +43,8 @@ namespace Cake.Terraform.Output
                 var builder = new StringBuilder();
                 foreach (string line in outputLines)
                 {
-                    builder.AppendLine(line);
+                    builder.Append(line);
+                    builder.Append("\n"); // OS consistent
                 }
 
                 output = builder.ToString();
