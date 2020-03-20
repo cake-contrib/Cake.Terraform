@@ -151,17 +151,10 @@ namespace Cake.Terraform
         }
 
         [CakeMethodAlias]
-        public static IEnumerable<string> TerraformOutput(this ICakeContext context, TerraformOutputSettings settings)
+        public static string TerraformOutput(this ICakeContext context, TerraformOutputSettings settings)
         {
             var runner = new TerraformOutputRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
             return runner.Run(settings);
-        }
-
-        [CakeMethodAlias]
-        public static string TerraformOutputSingle(this ICakeContext context, TerraformOutputSettings settings, string outputName)
-        {
-            var runner = new TerraformOutputRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
-            return runner.RunForSingle(settings, outputName);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Cake.Terraform.Output
         {
         }
 
-        private ProcessArgumentBuilder StandardArugments(TerraformOutputSettings settings)
+        public string Run(TerraformOutputSettings settings)
         {
             var arguments = new ProcessArgumentBuilder()
                 .Append("output");
@@ -25,33 +25,16 @@ namespace Cake.Terraform.Output
                 arguments.Append($"-state={settings.StatePath}");
             }
 
-            return arguments;
-        }
-        
-        public IEnumerable<string> Run(TerraformOutputSettings settings)
-        {
-            var arguments = StandardArugments(settings);
-            
             if (settings.Json)
             {
                 arguments.Append("-json");
             }
 
-            IEnumerable<string> output = null;
-            Run(settings, arguments, new ProcessSettings(), x =>
+            if (settings.OutputName != null)
             {
-                output = x.GetStandardOutput();
-            });
+                arguments.Append(settings.OutputName);
+            }
 
-            return output;
-        }
-
-        public string RunForSingle(TerraformOutputSettings settings, string outputName)
-        {
-            var arguments = StandardArugments(settings);
-
-            arguments.Append(outputName);
-            
             string output = null;
             Run(settings, arguments, new ProcessSettings(), x =>
             {
