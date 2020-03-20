@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Cake.Core;
-using Cake.Terraform.EnvList;
 using Cake.Terraform.Output;
 using Cake.Testing;
 using Xunit;
