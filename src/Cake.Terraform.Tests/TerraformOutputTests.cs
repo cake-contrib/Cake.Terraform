@@ -133,7 +133,7 @@ namespace Cake.Terraform.Tests
 
                 fixture.Run();
                 
-                Assert.Equal("foo = 123\nbar = abc\n", fixture.Outputs);
+                Assert.Equal("foo = 123\nbar = abc", fixture.Outputs);
             }
             
             [Fact]
@@ -152,7 +152,7 @@ namespace Cake.Terraform.Tests
 
                 var exception = Assert.Throws<ArgumentException>(() => fixture.Run());
                 Assert.Equal(
-                    "The output variable requested could not be found in the state\nfile. If you recently added this to your configuration, be\nsure to run `terraform apply`, since the state won't be updated\nwith new output variables until that command is run.\n", 
+                    "The output variable requested could not be found in the state\nfile. If you recently added this to your configuration, be\nsure to run `terraform apply`, since the state won't be updated\nwith new output variables until that command is run.", 
                     exception.Message);
             }
             
@@ -177,7 +177,7 @@ namespace Cake.Terraform.Tests
                 fixture.Run();
                 
                 Assert.Equal(
-                    "The output variable requested could not be found in the state\nfile. If you recently added this to your configuration, be\nsure to run `terraform apply`, since the state won't be updated\nwith new output variables until that command is run.\n", 
+                    "The output variable requested could not be found in the state\nfile. If you recently added this to your configuration, be\nsure to run `terraform apply`, since the state won't be updated\nwith new output variables until that command is run.", 
                     fixture.Outputs);
             }
         }

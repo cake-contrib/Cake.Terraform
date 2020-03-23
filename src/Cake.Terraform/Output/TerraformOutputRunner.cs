@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Text;
 using Cake.Core;
 using Cake.Core.IO;
@@ -60,7 +61,7 @@ namespace Cake.Terraform.Output
             string output = null;
             Run(settings, arguments, processSettings, x =>
             {
-                var outputLines = x.GetStandardOutput();
+                var outputLines = x.GetStandardOutput().ToList();
                 
                 var builder = new StringBuilder();
                 foreach (string line in outputLines)
@@ -69,6 +70,11 @@ namespace Cake.Terraform.Output
                     builder.Append("\n"); // OS consistent
                 }
 
+                if (outputLines.Any())
+                {
+                    builder.Remove(builder.Length - 1, 1);
+                }
+                
                 output = builder.ToString();
             });
 
