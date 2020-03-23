@@ -62,17 +62,17 @@ namespace Cake.Terraform.Output
             Run(settings, arguments, processSettings, x =>
             {
                 var outputLines = x.GetStandardOutput().ToList();
+                int lineCount = outputLines.Count();
                 
                 var builder = new StringBuilder();
-                foreach (string line in outputLines)
+                for (int i = 0; i < lineCount; i++)
                 {
-                    builder.Append(line);
-                    builder.Append("\n"); // OS consistent
-                }
-
-                if (outputLines.Any())
-                {
-                    builder.Remove(builder.Length - 1, 1);
+                    builder.Append(outputLines[i]);
+                    
+                    if (i < lineCount - 1)
+                    {
+                        builder.Append("\n"); // OS consistent
+                    }
                 }
                 
                 output = builder.ToString();
