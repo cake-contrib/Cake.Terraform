@@ -52,8 +52,13 @@ namespace Cake.Terraform.Output
                 arguments.Append(settings.OutputName);
             }
 
+            var processSettings = new ProcessSettings
+            {
+                RedirectStandardOutput = true
+            };
+            
             string output = null;
-            Run(settings, arguments, new ProcessSettings(), x =>
+            Run(settings, arguments, processSettings, x =>
             {
                 var outputLines = x.GetStandardOutput();
                 
