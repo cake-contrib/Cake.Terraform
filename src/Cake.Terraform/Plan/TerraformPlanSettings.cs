@@ -5,6 +5,11 @@ namespace Cake.Terraform.Plan
 {
     public class TerraformPlanSettings : TerraformSettings
     {
+        public TerraformPlanSettings()
+        {
+            this.Input = true;
+        }
+
         public FilePath OutFile { get; set; }
 
         public int Parallelism { get; set; }
@@ -24,5 +29,11 @@ namespace Cake.Terraform.Plan
         /// If set to true, generates a plan to destroy all the known resources
         /// </summary>
         public bool Destroy { get; set; }
+
+        /// <summary>
+        /// Ask for input for variables if not directly set.
+        /// <see>https://www.terraform.io/docs/commands/plan.html#input-true</see>
+        /// </summary>
+        public bool Input { get; set; }
     }
 }
