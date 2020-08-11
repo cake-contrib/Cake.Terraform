@@ -205,6 +205,32 @@ namespace Cake.Terraform.Tests
 
                 Assert.DoesNotContain("-destroy", result.Args);
             }
+
+            [Fact]
+            public void Should_omit_input_flag_by_default()
+            {
+                var fixture = new Fixture();
+
+                var result = fixture.Run();
+
+                Assert.DoesNotContain("-input", result.Args);
+            }
+
+            [Fact]
+            public void Should_include_input_flag_when_setting_is_false()
+            {
+                var fixture = new Fixture
+                {
+                    Settings = new TerraformPlanSettings
+                    {
+                        Input = false
+                    }
+                };
+
+                var result = fixture.Run();
+
+                Assert.Contains("-input", result.Args);
+            }
         }
     }
 }

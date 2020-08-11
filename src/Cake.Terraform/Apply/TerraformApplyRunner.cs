@@ -44,6 +44,11 @@ namespace Cake.Terraform.Apply
                 builder.AppendSwitchQuoted("-var", $"{inputVariable.Key}={inputVariable.Value}");
             }
 
+            if (!settings.Input)
+            {
+                builder.AppendSwitch("-input", "=", settings.Input.ToString());
+            }
+
             Run(settings, builder);
         }
     }

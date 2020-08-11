@@ -43,6 +43,11 @@ namespace Cake.Terraform.Plan
                 }
             }
 
+            if (!settings.Input)
+            {
+                builder.AppendSwitch("-input", "=", settings.Input.ToString());
+            }
+
             Run(settings, builder);
         }
 
