@@ -144,3 +144,16 @@ Task("Destroy")
     TerraformDestroy(settings);
 });
 ```
+
+
+## TerraformValidate
+
+```csharp
+#addin Cake.Terraform
+
+Task("Validate")
+    .Does(() =>
+{
+    TerraformValidate();
+});
+```

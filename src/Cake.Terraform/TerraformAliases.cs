@@ -11,6 +11,7 @@ using Cake.Terraform.Init;
 using Cake.Terraform.Plan;
 using Cake.Terraform.Refresh;
 using Cake.Terraform.Show;
+using Cake.Terraform.Validate;
 
 namespace Cake.Terraform
 {
@@ -145,6 +146,19 @@ namespace Cake.Terraform
         public static void TerraformRefresh(this ICakeContext context, TerraformRefreshSettings settings)
         {
             var runner = new TerraformRefreshRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
+            runner.Run(settings);
+        }
+
+        [CakeMethodAlias]
+        public static void TerraformValidate(this ICakeContext context)
+        {
+            TerraformValidate(context, new TerraformValidateSettings());
+        }
+
+        [CakeMethodAlias]
+        public static void TerraformValidate(this ICakeContext context, TerraformValidateSettings settings)
+        {
+            var runner = new TerraformValidateRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
             runner.Run(settings);
         }
     }
