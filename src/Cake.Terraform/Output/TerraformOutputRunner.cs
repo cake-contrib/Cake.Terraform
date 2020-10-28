@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Text;
 using Cake.Core;
 using Cake.Core.IO;
@@ -52,18 +53,28 @@ namespace Cake.Terraform.Output
                 arguments.Append(settings.OutputName);
             }
 
-            string output = null;
-            Run(settings, arguments, new ProcessSettings(), x =>
+            var processSettings = new ProcessSettings
             {
-                var outputLines = x.GetStandardOutput();
+                RedirectStandardOutput = true
+            };
+            
+            string output = null;
+            Run(settings, arguments, processSettings, x =>
+            {
+                var outputLines = x.GetStandardOutput().ToList();
+                int lineCount = outputLines.Count();
                 
                 var builder = new StringBuilder();
-                foreach (string line in outputLines)
+                for (int i = 0; i < lineCount; i++)
                 {
-                    builder.Append(line);
-                    builder.Append("\n"); // OS consistent
+                    builder.Append(outputLines[i]);
+                    
+                    if (i < lineCount - 1)
+                    {
+                        builder.Append("\n"); // OS consistent
+                    }
                 }
-
+                
                 output = builder.ToString();
             });
 
