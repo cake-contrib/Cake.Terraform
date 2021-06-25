@@ -43,7 +43,11 @@ namespace Cake.Terraform.Output
                 arguments.Append($"-state={settings.StatePath}");
             }
 
-            if (settings.Json)
+            if (settings.Raw)
+            {
+                arguments.Append("-raw");
+            }
+            else if (settings.Json)
             {
                 arguments.Append("-json");
             }

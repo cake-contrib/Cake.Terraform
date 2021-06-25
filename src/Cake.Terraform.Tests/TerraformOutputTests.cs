@@ -107,6 +107,26 @@ namespace Cake.Terraform.Tests
             }
             
             [Fact]
+            public void Should_request_raw_if_specified()
+            {
+                var fixture = new Fixture { Settings = new TerraformOutputSettings { Raw = true } };
+
+                var result = fixture.Run();
+                
+                Assert.Equal("output -no-color -raw", result.Args);
+            }
+            
+            [Fact]
+            public void Should_request_raw_over_json_if_both_are_specified()
+            {
+                var fixture = new Fixture { Settings = new TerraformOutputSettings { Raw = true, Json = true} };
+
+                var result = fixture.Run();
+                
+                Assert.Equal("output -no-color -raw", result.Args);
+            }
+            
+            [Fact]
             public void Should_request_specific_state_path_if_specified()
             {
                 var fixture = new Fixture { Settings = new TerraformOutputSettings { StatePath = "some_path"} };
