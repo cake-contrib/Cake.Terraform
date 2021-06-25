@@ -8,6 +8,7 @@ using Cake.Terraform.EnvList;
 using Cake.Terraform.EnvNew;
 using Cake.Terraform.EnvSelect;
 using Cake.Terraform.Init;
+using Cake.Terraform.Output;
 using Cake.Terraform.Plan;
 using Cake.Terraform.Refresh;
 using Cake.Terraform.Show;
@@ -146,6 +147,13 @@ namespace Cake.Terraform
         {
             var runner = new TerraformRefreshRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
             runner.Run(settings);
+        }
+
+        [CakeMethodAlias]
+        public static string TerraformOutput(this ICakeContext context, TerraformOutputSettings settings)
+        {
+            var runner = new TerraformOutputRunner(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
+            return runner.Run(settings);
         }
     }
 }
