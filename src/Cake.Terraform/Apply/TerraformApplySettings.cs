@@ -25,5 +25,11 @@ namespace Cake.Terraform.Apply
         /// https://www.terraform.io/docs/commands/apply.html#auto-approve
         /// </summary>
         public bool AutoApprove { get; set; }
+
+        /// <summary>
+        /// Using the apply for destroying the terraform resources
+        /// https://developer.hashicorp.com/terraform/cli/commands/destroy
+        /// </summary>
+        public bool Destroy { get; set; }
     }
 }
