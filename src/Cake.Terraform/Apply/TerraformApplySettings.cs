@@ -25,5 +25,10 @@ namespace Cake.Terraform.Apply
         /// https://www.terraform.io/docs/commands/apply.html#auto-approve
         /// </summary>
         public bool AutoApprove { get; set; }
+
+        /// <summary>
+        /// Does destory
+        /// </summary>
+        public bool Destroy { get; set; }
     }
 }
