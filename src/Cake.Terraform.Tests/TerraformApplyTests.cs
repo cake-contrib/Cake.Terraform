@@ -143,6 +143,22 @@ namespace Cake.Terraform.Tests
             }
 
             [Fact]
+            public void Should_Append_Destroy_When_AutoApprove_Is_True()
+            {
+                var fixture = new Fixture
+                {
+                    Settings = new TerraformApplySettings
+                    {
+                        Destroy = true
+                    }
+                };
+
+                var result = fixture.Run();
+
+                Assert.Contains("-destroy", result.Args);
+            }
+
+            [Fact]
             public void Should_set_plan_path()
             {
                 var fixture = new Fixture
