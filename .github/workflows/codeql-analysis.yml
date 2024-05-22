@@ -18,7 +18,7 @@ on:
 jobs:
   analyze:
     name: Analyze
-    runs-on: ubuntu-22.04
+    runs-on: windows-2022
 
     strategy:
       fail-fast: false
@@ -56,12 +56,15 @@ jobs:
         # Prefix the list here with "+" to use these queries and those in the config file.
         # queries: ./path/to/local/query, your-org/your-repo/queries@main
 
+    #- name: Build project
+    #  uses: cake-build/cake-action@a6eb054329257c9e70a6c6bf01747ad6e1d9d52b # v1
+    #  with:
+    #    script-path: recipe.cake
+    #    target: DotNetCore-Build
+    #    cake-version: tool-manifest
     - name: Build project
-      uses: cake-build/cake-action@a6eb054329257c9e70a6c6bf01747ad6e1d9d52b # v1
-      with:
-        script-path: recipe.cake
-        target: DotNetCore-Build
-        cake-version: 0.32.1
+      run: |
+        ./build.ps1 -Target DotNetCore-Build
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@1b1aada464948af03b950897e5eb522f92603cc2 # v3
