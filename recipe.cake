@@ -12,15 +12,16 @@ BuildParameters.SetParameters(context: Context,
                             webHost: "cake-contrib.github.io",
                             webLinkRoot: "Cake.Terraform",
                             webBaseEditUrl: "https://github.com/cake-contrib/Cake.Terraform/tree/develop/docs/input",
-                            shouldRunGitVersion: true);
+                            shouldRunGitVersion: true,
+                            shouldRunDupFinder: false,
+                            shouldRunInspectCode: false
+                            //preferredBuildProviderType: BuildProviderType.GitHubActions,
+                            //preferredBuildAgentOperatingSystem: PlatformFamily.Linux
+                            );
 
 BuildParameters.PrintParameters(Context);
 
 ToolSettings.SetToolSettings(context: Context,
-                            dupFinderExcludePattern: new string[] {
-                                BuildParameters.RootDirectoryPath + "/src/Cake.Terraform.Tests/**/*.cs"
-                            },
-                            dupFinderThrowExceptionOnFindingDuplicates: false,
                             testCoverageFilter: "+[*]* -[xunit.*]* -[Cake.Core]* -[Cake.Testing]* -[*.Tests]* ",
                             testCoverageExcludeByAttribute: "*.ExcludeFromCodeCoverage*",
                             testCoverageExcludeByFile: "*/*Designer.cs;*/*.g.cs;*/*.g.i.cs");
