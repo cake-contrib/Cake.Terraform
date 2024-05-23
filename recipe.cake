@@ -1,4 +1,4 @@
-#load nuget:?package=Cake.Recipe&version=1.0.0
+#load nuget:?package=Cake.Recipe&version=3.1.1
 
 Environment.SetVariableNames();
 
@@ -8,13 +8,9 @@ BuildParameters.SetParameters(context: Context,
                             title: "Cake.Terraform",
                             repositoryOwner: "cake-contrib",
                             repositoryName: "Cake.Terraform",
-                            appVeyorAccountName: "cakecontrib",
                             webHost: "cake-contrib.github.io",
                             webLinkRoot: "Cake.Terraform",
-                            webBaseEditUrl: "https://github.com/cake-contrib/Cake.Terraform/tree/develop/docs/input",
-                            shouldRunGitVersion: true,
-                            shouldRunDupFinder: false,
-                            shouldRunInspectCode: false
+                            webBaseEditUrl: "https://github.com/cake-contrib/Cake.Terraform/tree/develop/docs/input"
                             //preferredBuildProviderType: BuildProviderType.GitHubActions,
                             //preferredBuildAgentOperatingSystem: PlatformFamily.Linux
                             );
@@ -27,3 +23,4 @@ ToolSettings.SetToolSettings(context: Context,
                             testCoverageExcludeByFile: "*/*Designer.cs;*/*.g.cs;*/*.g.i.cs");
 
 Build.RunDotNetCore();
+
