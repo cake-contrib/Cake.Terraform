@@ -16,12 +16,16 @@
     <PackageReleaseNotes>https://github.com/cake-contrib/Cake.7zip/releases</PackageReleaseNotes>
     <RootNamespace>Cake.SevenZip</RootNamespace>
     <Version>0.0.0</Version>
-    <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</PackageIconUrl>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Cake.Core" PrivateAssets="All">
       <Version>0.33.0</Version>
+    </PackageReference>
+    <PackageReference Include="CakeContrib.Guidelines">
+      <Version>1.5.1</Version>
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
 
