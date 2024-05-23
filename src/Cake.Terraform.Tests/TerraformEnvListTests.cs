@@ -1,7 +1,6 @@
 ﻿using Cake.Core;
 using Cake.Terraform.EnvList;
 using Cake.Testing;
-using Cake.Testing.Fixtures;
 using Xunit;
 
 namespace Cake.Terraform.Tests
