@@ -163,6 +163,58 @@ namespace Cake.Terraform.Tests
 
                 Assert.Contains("-force-copy", result.Args);
             }
+
+            [Fact]
+            public void Should_omit_input_flag_by_default()
+            {
+                var fixture = new Fixture();
+
+                var result = fixture.Run();
+
+                Assert.DoesNotContain("-input", result.Args);
+            }
+
+            [Fact]
+            public void Should_include_input_flag_when_setting_is_false()
+            {
+                var fixture = new Fixture
+                {
+                    Settings = new TerraformInitSettings
+                    {
+                        Input = false
+                    }
+                };
+
+                var result = fixture.Run();
+
+                Assert.Contains("-input", result.Args);
+            }
+
+            [Fact]
+            public void Should_omit_backend_flag_by_default()
+            {
+                var fixture = new Fixture();
+
+                var result = fixture.Run();
+
+                Assert.DoesNotContain("-backend", result.Args);
+            }
+
+            [Fact]
+            public void Should_include_backend_flag_when_setting_is_false()
+            {
+                var fixture = new Fixture
+                {
+                    Settings = new TerraformInitSettings
+                    {
+                        Backend = false
+                    }
+                };
+
+                var result = fixture.Run();
+
+                Assert.Contains("-backend", result.Args);
+            }
         }
     }
 }

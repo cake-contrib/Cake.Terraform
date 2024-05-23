@@ -32,6 +32,16 @@ namespace Cake.Terraform.Init
                 builder.Append("-reconfigure");
             }
 
+            if (!settings.Input)
+            {
+                builder.AppendSwitch("-input", "=", settings.Input.ToString());
+            }
+
+            if (!settings.Backend)
+            {
+                builder.AppendSwitch("-backend", "=", settings.Backend.ToString());
+            }
+
             Run(settings, builder);
         }
     }
