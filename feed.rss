@@ -1,35 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
 	<channel>
 		<title>Cake.Terraform</title>
-		<link>http://erikvanbrakel.github.io/Cake.Terraform</link>
+		<link>http://cake-contrib.github.io/Cake.Terraform</link>
 		<description />
-		<copyright>2017</copyright>
-		<pubDate>Thu, 08 Jun 2017 06:59:58 GMT</pubDate>
-		<lastBuildDate>Thu, 08 Jun 2017 06:59:58 GMT</lastBuildDate>
+		<copyright>2024</copyright>
+		<pubDate>Thu, 23 May 2024 20:33:51 GMT</pubDate>
+		<lastBuildDate>Thu, 23 May 2024 20:33:51 GMT</lastBuildDate>
 		<item>
 			<title>New release - 0.2.0</title>
-			<link>http://erikvanbrakel.github.io/Cake.Terraform/blog/release-0-3-0</link>
+			<link>http://cake-contrib.github.io/Cake.Terraform/blog/release-0.1.1</link>
 			<description>&lt;p&gt;This version adds functionality to format the output of the TerraformShow method as HTML. This is particularly useful in CI/CD scenarios, as a report to use within a build server such as TeamCity.&lt;/p&gt;</description>
 			<author>erikvanbrakel</author>
-			<guid>http://erikvanbrakel.github.io/Cake.Terraform/blog/release-0-3-0</guid>
+			<guid>http://cake-contrib.github.io/Cake.Terraform/blog/release-0.1.1</guid>
 			<pubDate>Wed, 22 Mar 2017 00:00:00 GMT</pubDate>
+			<content:encoded>&lt;h1 id="is-here"&gt;0.2.0 is here&lt;/h1&gt;
+&lt;p&gt;This version adds functionality to format the output of the TerraformShow method as HTML. This is particularly useful in CI/CD scenarios, as a report to use within a build server such as TeamCity.&lt;/p&gt;
+</content:encoded>
 		</item>
 		<item>
 			<title>New release - 0.2.0</title>
-			<link>http://erikvanbrakel.github.io/Cake.Terraform/blog/release-0.1.1</link>
+			<link>http://cake-contrib.github.io/Cake.Terraform/blog/release-0-3-0</link>
 			<description>&lt;p&gt;This version adds functionality to format the output of the TerraformShow method as HTML. This is particularly useful in CI/CD scenarios, as a report to use within a build server such as TeamCity.&lt;/p&gt;</description>
 			<author>erikvanbrakel</author>
-			<guid>http://erikvanbrakel.github.io/Cake.Terraform/blog/release-0.1.1</guid>
+			<guid>http://cake-contrib.github.io/Cake.Terraform/blog/release-0-3-0</guid>
 			<pubDate>Wed, 22 Mar 2017 00:00:00 GMT</pubDate>
+			<content:encoded>&lt;h1 id="is-here"&gt;0.2.0 is here&lt;/h1&gt;
+&lt;p&gt;This version adds functionality to format the output of the TerraformShow method as HTML. This is particularly useful in CI/CD scenarios, as a report to use within a build server such as TeamCity.&lt;/p&gt;
+</content:encoded>
 		</item>
 		<item>
 			<title>Initial Release - 0.1.0</title>
-			<link>http://erikvanbrakel.github.io/Cake.Terraform/blog/initial-release</link>
+			<link>http://cake-contrib.github.io/Cake.Terraform/blog/initial-release</link>
 			<description>&lt;p&gt;The first prerelease version of Cake.Terraform is available!&lt;/p&gt;</description>
 			<author>erikvanbrakel</author>
-			<guid>http://erikvanbrakel.github.io/Cake.Terraform/blog/initial-release</guid>
+			<guid>http://cake-contrib.github.io/Cake.Terraform/blog/initial-release</guid>
 			<pubDate>Tue, 21 Mar 2017 00:00:00 GMT</pubDate>
+			<content:encoded>&lt;h1 id="is-here"&gt;0.1.0 is here&lt;/h1&gt;
+&lt;p&gt;The first prerelease version of Cake.Terraform is available!&lt;/p&gt;
+</content:encoded>
 		</item>
 	</channel>
 </rss>

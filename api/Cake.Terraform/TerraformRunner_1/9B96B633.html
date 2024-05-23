@@ -7,7 +7,6 @@
         <link rel="shortcut icon" href="/Cake.Terraform/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Terraform/assets/img/favicon.ico" type="image/x-icon">
         <title>Cake.Terraform - API - TerraformRunner&lt;TTerraformSettings&gt;.TerraformRunner(IFileSystem, ICakeEnvironment, IProcessRunner, IToolLocator) Constructor</title>
-        <link href="/Cake.Terraform/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Terraform/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Terraform/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/Cake.Terraform/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
@@ -22,6 +21,7 @@
         <script src="/Cake.Terraform/assets/js/jquery.slimscroll.min.js"></script>
         <script src="/Cake.Terraform/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/Cake.Terraform/assets/js/mermaid.min.js"></script>
+        <script src="/Cake.Terraform/assets/js/svg-pan-zoom.min.js"></script>
         <!--[if lt IE 9]>
         <script src="/Cake.Terraform/assets/js/html5shiv.min.js"></script>
         <script src="/Cake.Terraform/assets/js/respond.min.js"></script>
@@ -57,6 +57,7 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/Cake.Terraform/docs">Documentation</a></li>
+        <li><a href="/Cake.Terraform/tasks">Tasks</a></li>
         <li><a href="/Cake.Terraform/blog">Blog</a></li>
         <li class="active"><a href="/Cake.Terraform/api">API</a></li>
  
@@ -79,7 +80,8 @@
 </div>
 
                 </section>
-                <section class="sidebar">                    
+                <section class="sidebar">    
+                                     
                     	
 	    <script src="/Cake.Terraform/assets/js/lunr.min.js"></script>
     <script src="/Cake.Terraform/assets/js/searchIndex.js"></script>
@@ -107,7 +109,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -119,6 +121,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -138,6 +147,7 @@
 
 
                     </ul>
+                            
                 </section>                
             </aside>
             
@@ -148,7 +158,7 @@
 
 
 <section class="content-header">
-			<h3><a href="/Cake.Terraform/api/Cake.Terraform/TerraformRunner_1">TerraformRunner<wbr>&lt;<wbr>T<wbr>Terraform<wbr>Settings&gt;<wbr></a>.</h3>
+			<h3><a href="/Cake.Terraform/api/Cake.Terraform/TerraformRunner_1">TerraformRunner</a><wbr>&lt;<a href="/Cake.Terraform/api/Cake.Terraform/TerraformRunner_1#typeparam-TTerraformSettings">TTerraformSettings</a>&gt;<wbr>.</h3>
 	<h1>TerraformRunner<wbr>(IFileSystem, <wbr>ICakeEnvironment, <wbr>IProcessRunner, <wbr>IToolLocator)<wbr> <small>Constructor</small></h1>
 </section>
 <section class="content">
@@ -163,7 +173,7 @@
 						<dd><a href="/Cake.Terraform/api/Cake.Terraform">Cake<wbr>.Terraform</a></dd>
 					
 						<dt>Containing Type</dt>
-						<dd><a href="/Cake.Terraform/api/Cake.Terraform/TerraformRunner_1">TerraformRunner<wbr>&lt;<wbr>T<wbr>Terraform<wbr>Settings&gt;<wbr></a></dd>		
+						<dd><a href="/Cake.Terraform/api/Cake.Terraform/TerraformRunner_1">TerraformRunner</a><wbr>&lt;<a href="/Cake.Terraform/api/Cake.Terraform/TerraformRunner_1#typeparam-TTerraformSettings">TTerraformSettings</a>&gt;<wbr></dd>		
 					
 				</dl>
   			</div>
@@ -253,22 +263,53 @@
                 $(document.body).removeClass('sidebar-open');
             });
             
-            $(document).load(function() {
+            $(document).ready(function() {
                 mermaid.initialize(
                 {
                     flowchart:
                     {
-                        htmlLabels: false,
-                        useMaxWidth:false
-                    }
-                });  
-                mermaid.init(undefined, ".mermaid")
-                $('svg').addClass('img-responsive');
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
                 
                 $('pre code').each(function(i, block) {
                     hljs.highlightBlock(block);
                 });  
             });
+
             hljs.initHighlightingOnLoad();
 
             // Back to top

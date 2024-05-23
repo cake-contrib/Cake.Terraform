@@ -7,7 +7,6 @@
         <link rel="shortcut icon" href="/Cake.Terraform/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Terraform/assets/img/favicon.ico" type="image/x-icon">
         <title>Cake.Terraform - API - Cake.Terraform Namespace</title>
-        <link href="/Cake.Terraform/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Terraform/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Terraform/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/Cake.Terraform/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
@@ -22,6 +21,7 @@
         <script src="/Cake.Terraform/assets/js/jquery.slimscroll.min.js"></script>
         <script src="/Cake.Terraform/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/Cake.Terraform/assets/js/mermaid.min.js"></script>
+        <script src="/Cake.Terraform/assets/js/svg-pan-zoom.min.js"></script>
         <!--[if lt IE 9]>
         <script src="/Cake.Terraform/assets/js/html5shiv.min.js"></script>
         <script src="/Cake.Terraform/assets/js/respond.min.js"></script>
@@ -57,6 +57,7 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/Cake.Terraform/docs">Documentation</a></li>
+        <li><a href="/Cake.Terraform/tasks">Tasks</a></li>
         <li><a href="/Cake.Terraform/blog">Blog</a></li>
         <li class="active"><a href="/Cake.Terraform/api">API</a></li>
  
@@ -73,12 +74,13 @@
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#ClassTypes">Class Types</a></p>
-<p><a href="#EnumTypes">Enum Types</a></p>
+<p><a href="#Namespaces">Namespaces</a></p>
 <hr class="infobar-hidden">
 </div>
 
                 </section>
-                <section class="sidebar">                    
+                <section class="sidebar">    
+                                     
                     	
 	    <script src="/Cake.Terraform/assets/js/lunr.min.js"></script>
     <script src="/Cake.Terraform/assets/js/searchIndex.js"></script>
@@ -106,7 +108,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -118,6 +120,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -129,10 +138,26 @@
 				<li class="treeview active">
 				<a href="/Cake.Terraform/api/Cake">Cake</a> <a href="#" class="expand"></a>
 				<ul class="treeview-menu">
-						<li class=" selected"><a href="/Cake.Terraform/api/Cake.Terraform">Cake<wbr>.Terraform</a></li>
-</ul></li>      
+			
+				<li class="treeview active selected">
+				<a href="/Cake.Terraform/api/Cake.Terraform">Cake<wbr>.Terraform</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/Cake.Terraform/api/Cake.Terraform.Apply">Cake<wbr>.Terraform<wbr>.Apply</a></li>
+			<li><a href="/Cake.Terraform/api/Cake.Terraform.Destroy">Cake<wbr>.Terraform<wbr>.Destroy</a></li>
+			<li><a href="/Cake.Terraform/api/Cake.Terraform.EnvDelete">Cake<wbr>.Terraform<wbr>.EnvDelete</a></li>
+			<li><a href="/Cake.Terraform/api/Cake.Terraform.EnvList">Cake<wbr>.Terraform<wbr>.EnvList</a></li>
+			<li><a href="/Cake.Terraform/api/Cake.Terraform.EnvNew">Cake<wbr>.Terraform<wbr>.EnvNew</a></li>
+			<li><a href="/Cake.Terraform/api/Cake.Terraform.EnvSelect">Cake<wbr>.Terraform<wbr>.EnvSelect</a></li>
+			<li><a href="/Cake.Terraform/api/Cake.Terraform.Init">Cake<wbr>.Terraform<wbr>.Init</a></li>
+			<li><a href="/Cake.Terraform/api/Cake.Terraform.Output">Cake<wbr>.Terraform<wbr>.Output</a></li>
+			<li><a href="/Cake.Terraform/api/Cake.Terraform.Plan">Cake<wbr>.Terraform<wbr>.Plan</a></li>
+			<li><a href="/Cake.Terraform/api/Cake.Terraform.Refresh">Cake<wbr>.Terraform<wbr>.Refresh</a></li>
+			<li><a href="/Cake.Terraform/api/Cake.Terraform.Show">Cake<wbr>.Terraform<wbr>.Show</a></li>
+			<li><a href="/Cake.Terraform/api/Cake.Terraform.Validate">Cake<wbr>.Terraform<wbr>.Validate</a></li>
+</ul></li></ul></li>      
 
                     </ul>
+                            
                 </section>                
             </aside>
             
@@ -150,6 +175,7 @@
 	
 	
 
+
 			<h1 id="ClassTypes">Class Types</h1>
 			<div class="box">
 				<div class="box-body no-padding table-responsive">
@@ -165,71 +191,78 @@
 									<td></td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformApplyRunner">TerraformApplyRunner</a></td>
+								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformEnvSettings">TerraformEnvSettings</a></td>
 									<td></td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformApplySettings">Terraform<wbr>Apply<wbr>Settings</a></td>
-									<td></td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformDestroyRunner">Terraform<wbr>Destroy<wbr>Runner</a></td>
-									<td></td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformDestroySettings">Terraform<wbr>Destroy<wbr>Settings</a></td>
-									<td>
-    The terraform destroy command is used to destroy the Terraform-managed infrastructure.
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformInitRunner">TerraformInitRunner</a></td>
-									<td></td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformInitSettings">Terraform<wbr>Init<wbr>Settings</a></td>
-									<td></td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformPlanRunner">TerraformPlanRunner</a></td>
-									<td></td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformPlanSettings">Terraform<wbr>Plan<wbr>Settings</a></td>
-									<td></td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformRunner_1">TerraformRunner<wbr>&lt;<wbr>T<wbr>Terraform<wbr>Settings&gt;<wbr></a></td>
+								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformRunner_1">TerraformRunner</a><wbr>&lt;<a href="/Cake.Terraform/api/Cake.Terraform/TerraformRunner_1#typeparam-TTerraformSettings">TTerraformSettings</a>&gt;<wbr></td>
 									<td></td>
 							</tr>
 							<tr>
 								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformSettings">TerraformSettings</a></td>
 									<td></td>
 							</tr>
-							<tr>
-								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformShowRunner">TerraformShowRunner</a></td>
-									<td></td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Terraform/api/Cake.Terraform/TerraformShowSettings">Terraform<wbr>Show<wbr>Settings</a></td>
-									<td></td>
-							</tr>
 					</tbody></table>
 				</div>
 			</div>
 		
-			<h1 id="EnumTypes">Enum Types</h1>
+
+			<h1 id="Namespaces">Namespaces</h1>
 			<div class="box">
 				<div class="box-body no-padding table-responsive">
 					<table class="table table-striped table-hover two-cols">
 						<thead>
 							<tr>
-								<th>Enum</th>
+								<th>Namespace</th>
 									<th>Summary</th>
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/Cake.Terraform/api/Cake.Terraform/OutputFormat">OutputFormat</a></td>
+								<td><a href="/Cake.Terraform/api/Cake.Terraform.Apply">Cake<wbr>.Terraform<wbr>.Apply</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Terraform/api/Cake.Terraform.Destroy">Cake<wbr>.Terraform<wbr>.Destroy</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Terraform/api/Cake.Terraform.EnvDelete">Cake<wbr>.Terraform<wbr>.EnvDelete</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Terraform/api/Cake.Terraform.EnvList">Cake<wbr>.Terraform<wbr>.EnvList</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Terraform/api/Cake.Terraform.EnvNew">Cake<wbr>.Terraform<wbr>.EnvNew</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Terraform/api/Cake.Terraform.EnvSelect">Cake<wbr>.Terraform<wbr>.EnvSelect</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Terraform/api/Cake.Terraform.Init">Cake<wbr>.Terraform<wbr>.Init</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Terraform/api/Cake.Terraform.Output">Cake<wbr>.Terraform<wbr>.Output</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Terraform/api/Cake.Terraform.Plan">Cake<wbr>.Terraform<wbr>.Plan</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Terraform/api/Cake.Terraform.Refresh">Cake<wbr>.Terraform<wbr>.Refresh</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Terraform/api/Cake.Terraform.Show">Cake<wbr>.Terraform<wbr>.Show</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Terraform/api/Cake.Terraform.Validate">Cake<wbr>.Terraform<wbr>.Validate</a></td>
 									<td></td>
 							</tr>
 					</tbody></table>
@@ -259,22 +292,53 @@
                 $(document.body).removeClass('sidebar-open');
             });
             
-            $(document).load(function() {
+            $(document).ready(function() {
                 mermaid.initialize(
                 {
                     flowchart:
                     {
-                        htmlLabels: false,
-                        useMaxWidth:false
-                    }
-                });  
-                mermaid.init(undefined, ".mermaid")
-                $('svg').addClass('img-responsive');
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
                 
                 $('pre code').each(function(i, block) {
                     hljs.highlightBlock(block);
                 });  
             });
+
             hljs.initHighlightingOnLoad();
 
             // Back to top

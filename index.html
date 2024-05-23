@@ -9,7 +9,6 @@
         <link rel="shortcut icon" href="/Cake.Terraform/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Terraform/assets/img/favicon.ico" type="image/x-icon">
         <title>Cake.Terraform - Cake.Terraform</title>
-        <link href="/Cake.Terraform/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Terraform/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Terraform/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
         <link href="/Cake.Terraform/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
@@ -24,6 +23,7 @@
         <script src="/Cake.Terraform/assets/js/jquery.slimscroll.min.js"></script>
         <script src="/Cake.Terraform/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/Cake.Terraform/assets/js/mermaid.min.js"></script>
+        <script src="/Cake.Terraform/assets/js/svg-pan-zoom.min.js"></script>
         <!--[if lt IE 9]>
         <script src="/Cake.Terraform/assets/js/html5shiv.min.js"></script>
         <script src="/Cake.Terraform/assets/js/respond.min.js"></script>
@@ -55,6 +55,7 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/Cake.Terraform/docs">Documentation</a></li>
+        <li><a href="/Cake.Terraform/tasks">Tasks</a></li>
         <li><a href="/Cake.Terraform/blog">Blog</a></li>
         <li><a href="/Cake.Terraform/api">API</a></li>
  
@@ -70,16 +71,19 @@
             <aside class="main-sidebar hidden">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
+        <div><p><a href="https://github.com/cake-contrib/Cake.Terraform/tree/develop/docs/input/index.cshtml"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
     <div id="infobar-headings"></div>
 
                 </section>
-                <section class="sidebar">                    
+                <section class="sidebar">    
+                                     
                     
 
                     <ul class="sidebar-menu">
                         
 
                     </ul>
+                            
                 </section>                
             </aside>
             
@@ -89,9 +93,9 @@
 
 
 
-	<section class="content-header">
-		<h1>Cake.Terraform</h1>
-	</section>
+		<section class="content-header">
+			<h1>Cake.Terraform</h1>
+		</section>
 	<section class="content">
 		
 <div class="container">
@@ -123,22 +127,53 @@
                 $(document.body).removeClass('sidebar-open');
             });
             
-            $(document).load(function() {
+            $(document).ready(function() {
                 mermaid.initialize(
                 {
                     flowchart:
                     {
-                        htmlLabels: false,
-                        useMaxWidth:false
-                    }
-                });  
-                mermaid.init(undefined, ".mermaid")
-                $('svg').addClass('img-responsive');
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
                 
                 $('pre code').each(function(i, block) {
                     hljs.highlightBlock(block);
                 });  
             });
+
             hljs.initHighlightingOnLoad();
 
             // Back to top
