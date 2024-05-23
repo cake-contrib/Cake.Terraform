@@ -10,17 +10,15 @@ BuildParameters.SetParameters(context: Context,
                             repositoryName: "Cake.Terraform",
                             webHost: "cake-contrib.github.io",
                             webLinkRoot: "Cake.Terraform",
-                            webBaseEditUrl: "https://github.com/cake-contrib/Cake.Terraform/tree/develop/docs/input"
+                            webBaseEditUrl: "https://github.com/cake-contrib/Cake.Terraform/tree/develop/docs/input",
+                            shouldRunDotNetCorePack: true
                             //preferredBuildProviderType: BuildProviderType.GitHubActions,
                             //preferredBuildAgentOperatingSystem: PlatformFamily.Linux
                             );
 
 BuildParameters.PrintParameters(Context);
 
-ToolSettings.SetToolSettings(context: Context,
-                            testCoverageFilter: "+[*]* -[xunit.*]* -[Cake.Core]* -[Cake.Testing]* -[*.Tests]* ",
-                            testCoverageExcludeByAttribute: "*.ExcludeFromCodeCoverage*",
-                            testCoverageExcludeByFile: "*/*Designer.cs;*/*.g.cs;*/*.g.i.cs");
+ToolSettings.SetToolSettings(context: Context);
 
 Build.RunDotNetCore();
 
