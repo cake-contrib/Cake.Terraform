@@ -36,5 +36,11 @@ namespace Cake.Terraform.Apply
         /// <see>https://www.terraform.io/docs/commands/apply.html#input-true</see>
         /// </summary>
         public bool Input { get; set; }
+
+        /// <summary>
+        /// Does destory
+        /// <see>https://www.terraform.io/docs/commands/destroy.html</see>
+        /// </summary>
+        public bool Destroy { get; set; }
     }
 }

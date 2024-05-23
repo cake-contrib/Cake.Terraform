@@ -17,6 +17,11 @@ namespace Cake.Terraform.Apply
             var builder = new ProcessArgumentBuilder()
                 .Append("apply");
 
+            if (settings.Destroy)
+            {
+                builder.Append("-destroy");
+            }
+
             // Order of AutoApprove and Plan are important.
             if (settings.AutoApprove)
             {
