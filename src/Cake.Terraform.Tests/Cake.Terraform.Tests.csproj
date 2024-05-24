@@ -8,8 +8,13 @@
     <PackageReference Include="Cake.Core" Version="0.33.0" />
     <PackageReference Include="Cake.Testing" Version="0.33.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
-    <PackageReference Include="xunit" Version="2.2.0" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
+    <!--
+      add a direct reference to Microsoft.TestPlatform.ObjectModel
+      to work around https://github.com/microsoft/vstest/issues/2469
+    -->
+    <PackageReference Include="Microsoft.TestPlatform.ObjectModel" Version="17.10.0" />
+    <PackageReference Include="xunit" Version="2.5.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
   </ItemGroup>
 
   <ItemGroup>
