@@ -11,7 +11,8 @@ BuildParameters.SetParameters(context: Context,
                             webHost: "cake-contrib.github.io",
                             webLinkRoot: "Cake.Terraform",
                             webBaseEditUrl: "https://github.com/cake-contrib/Cake.Terraform/tree/develop/docs/input",
-                            shouldRunDotNetCorePack: true
+                            shouldRunDotNetCorePack: true,
+                            shouldRunCodecov: false
                             //preferredBuildProviderType: BuildProviderType.GitHubActions,
                             //preferredBuildAgentOperatingSystem: PlatformFamily.Linux
                             );
