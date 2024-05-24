@@ -1,21 +1,19 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" />
-        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Terraform/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Terraform/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake.Terraform - Clearcache</title>
+        <title>Cake.Terraform - API - TerraformApplySettings.Destroy Property</title>
         <link href="/Cake.Terraform/assets/css/highlight.css" rel="stylesheet">
-        <link href="/Cake.Terraform/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
-        <link href="/Cake.Terraform/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
-        <link href="/Cake.Terraform/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="/Cake.Terraform/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/Cake.Terraform/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/Cake.Terraform/assets/css/theme/theme.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/Cake.Terraform/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/Cake.Terraform/assets/css/override.css" rel="stylesheet" />
+        <link href="/Cake.Terraform/assets/css/override.css" rel="stylesheet">
         <script src="/Cake.Terraform/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/Cake.Terraform/assets/js/bootstrap.min.js"></script>        
         <script src="/Cake.Terraform/assets/js/app.min.js"></script>         
@@ -59,9 +57,8 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
                                     <li><a href="/Cake.Terraform/docs">Documentation</a></li>
-        <li class="active"><a href="/Cake.Terraform/tasks">Tasks</a></li>
         <li><a href="/Cake.Terraform/blog">Blog</a></li>
-        <li><a href="/Cake.Terraform/api">API</a></li>
+        <li class="active"><a href="/Cake.Terraform/api">API</a></li>
  
                         </ul>       
                     </div>
@@ -75,72 +72,83 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-        <div><p><a href="https://github.com/cake-contrib/Cake.Terraform/tree/develop/docs/input/tasks/ClearCache.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
-    <div id="infobar-headings"></div>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Value">Value</a></p>
+<hr class="infobar-hidden">
+</div>
 
                 </section>
                 <section class="sidebar">    
                                      
-                    
+                    	
+	    <script src="/Cake.Terraform/assets/js/lunr.min.js"></script>
+    <script src="/Cake.Terraform/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
 
                     <ul class="sidebar-menu">
                         
+			<li class="header">Namespace</li>
+		<li><a href="/Cake.Terraform/api/Cake.Terraform.Apply">Cake<wbr>.Terraform<wbr>.Apply</a></li>
+		<li class="header">Type</li>
+		<li><a href="/Cake.Terraform/api/Cake.Terraform.Apply/TerraformApplySettings">Terraform<wbr>Apply<wbr>Settings</a></li>
+		<li role="separator" class="divider"></li>
+			<li class="header">Constructors</li>
+				<li><a href="/Cake.Terraform/api/Cake.Terraform.Apply/TerraformApplySettings/51DA1342">Terraform<wbr>Apply<wbr>Settings<wbr>()<wbr></a></li>
+			<li class="header">Property Members</li>
+				<li><a href="/Cake.Terraform/api/Cake.Terraform.Apply/TerraformApplySettings/39B71FE5">AutoApprove</a></li>
+				<li class="selected"><a href="/Cake.Terraform/api/Cake.Terraform.Apply/TerraformApplySettings/A1C0107C">Destroy</a></li>
+				<li><a href="/Cake.Terraform/api/Cake.Terraform.Apply/TerraformApplySettings/29292D9B">Input</a></li>
+				<li><a href="/Cake.Terraform/api/Cake.Terraform.Apply/TerraformApplySettings/EB0C9A1B">InputVariables</a></li>
+				<li><a href="/Cake.Terraform/api/Cake.Terraform.Apply/TerraformApplySettings/0F0D0225">InputVariablesFile</a></li>
+				<li><a href="/Cake.Terraform/api/Cake.Terraform.Apply/TerraformApplySettings/3F442B77">Parallelism</a></li>
+				<li><a href="/Cake.Terraform/api/Cake.Terraform.Apply/TerraformApplySettings/15CFA8B1">Plan</a></li>
 
-                <li><a href="/Cake.Terraform/tasks/Analyze">Analyze</a></li>
-                <li><a href="/Cake.Terraform/tasks/AppVeyor">Appveyor</a></li>
-                <li><a href="/Cake.Terraform/tasks/Build">Build</a></li>
-                <li><a href="/Cake.Terraform/tasks/Clean">Clean</a></li>
-                <li><a href="/Cake.Terraform/tasks/Clean-Documentation">Clean Documentation</a></li>
-                <li><a href="/Cake.Terraform/tasks/Clear-AppVeyor-Cache">Clear Appveyor Cache</a></li>
-                <li class="selected"><a href="/Cake.Terraform/tasks/ClearCache">Clearcache</a></li>
-                <li><a href="/Cake.Terraform/tasks/Create-Chocolatey-Packages">Create Chocolatey Packages</a></li>
-                <li><a href="/Cake.Terraform/tasks/Create-Default-Labels">Create Default Labels</a></li>
-                <li><a href="/Cake.Terraform/tasks/Create-Nuget-Package">Create Nuget Package</a></li>
-                <li><a href="/Cake.Terraform/tasks/Create-NuGet-Packages">Create Nuget Packages</a></li>
-                <li><a href="/Cake.Terraform/tasks/Create-Release-Notes">Create Release Notes</a></li>
-                <li><a href="/Cake.Terraform/tasks/CreateIssuesReport">Createissuesreport</a></li>
-                <li><a href="/Cake.Terraform/tasks/Default">Default</a></li>
-                <li><a href="/Cake.Terraform/tasks/Deploy-Graph-Documentation">Deploy Graph Documentation</a></li>
-                <li><a href="/Cake.Terraform/tasks/DotNetCore-Build">Dotnetcore Build</a></li>
-                <li><a href="/Cake.Terraform/tasks/DotNetCore-Pack">Dotnetcore Pack</a></li>
-                <li><a href="/Cake.Terraform/tasks/DotNetCore-Restore">Dotnetcore Restore</a></li>
-                <li><a href="/Cake.Terraform/tasks/DotNetCore-Test">Dotnetcore Test</a></li>
-                <li><a href="/Cake.Terraform/tasks/DupFinder">Dupfinder</a></li>
-                <li><a href="/Cake.Terraform/tasks/Export-Release-Notes">Export Release Notes</a></li>
-                <li><a href="/Cake.Terraform/tasks/Force-Publish-Documentation">Force Publish Documentation</a></li>
-                <li><a href="/Cake.Terraform/tasks/InspectCode">Inspectcode</a></li>
-                <li><a href="/Cake.Terraform/tasks/Install-OpenCover">Install Opencover</a></li>
-                <li><a href="/Cake.Terraform/tasks/Install-ReportGenerator">Install Reportgenerator</a></li>
-                <li><a href="/Cake.Terraform/tasks/Install-ReportUnit">Install Reportunit</a></li>
-                <li><a href="/Cake.Terraform/tasks/Labels">Labels</a></li>
-                <li><a href="/Cake.Terraform/tasks/Package">Package</a></li>
-                <li><a href="/Cake.Terraform/tasks/Preview">Preview</a></li>
-                <li><a href="/Cake.Terraform/tasks/Preview-Documentation">Preview Documentation</a></li>
-                <li><a href="/Cake.Terraform/tasks/Print-AppVeyor-Environment-Variables">Print Appveyor Environment Variables</a></li>
-                <li><a href="/Cake.Terraform/tasks/Publish-Chocolatey-Packages">Publish Chocolatey Packages</a></li>
-                <li><a href="/Cake.Terraform/tasks/Publish-Documentation">Publish Documentation</a></li>
-                <li><a href="/Cake.Terraform/tasks/Publish-GitHub-Release">Publish Github Release</a></li>
-                <li><a href="/Cake.Terraform/tasks/Publish-MyGet-Packages">Publish Myget Packages</a></li>
-                <li><a href="/Cake.Terraform/tasks/Publish-Nuget-Packages">Publish Nuget Packages</a></li>
-                <li><a href="/Cake.Terraform/tasks/PublishDocs">Publishdocs</a></li>
-                <li><a href="/Cake.Terraform/tasks/ReleaseNotes">Releasenotes</a></li>
-                <li><a href="/Cake.Terraform/tasks/Restore">Restore</a></li>
-                <li><a href="/Cake.Terraform/tasks/Run-Integration-Tests">Run Integration Tests</a></li>
-                <li><a href="/Cake.Terraform/tasks/Show-Info">Show Info</a></li>
-                <li><a href="/Cake.Terraform/tasks/Test">Test</a></li>
-                <li><a href="/Cake.Terraform/tasks/Test-Fixie">Test Fixie</a></li>
-                <li><a href="/Cake.Terraform/tasks/Test-MSTest">Test Mstest</a></li>
-                <li><a href="/Cake.Terraform/tasks/Test-NUnit">Test Nunit</a></li>
-                <li><a href="/Cake.Terraform/tasks/Test-VSTest">Test Vstest</a></li>
-                <li><a href="/Cake.Terraform/tasks/Test-xUnit">Test Xunit</a></li>
-                <li><a href="/Cake.Terraform/tasks/Transifex-Pull-Translations">Transifex Pull Translations</a></li>
-                <li><a href="/Cake.Terraform/tasks/Transifex-Push-SourceFiles">Transifex Push Sourcefiles</a></li>
-                <li><a href="/Cake.Terraform/tasks/Transifex-Push-Translations">Transifex Push Translations</a></li>
-                <li><a href="/Cake.Terraform/tasks/Transifex-Setup">Transifex Setup</a></li>
-                <li><a href="/Cake.Terraform/tasks/Upload-AppVeyor-Artifacts">Upload Appveyor Artifacts</a></li>
-                <li><a href="/Cake.Terraform/tasks/Upload-Codecov-Report">Upload Codecov Report</a></li>
-                <li><a href="/Cake.Terraform/tasks/Upload-Coverage-Report">Upload Coverage Report</a></li>
-                <li><a href="/Cake.Terraform/tasks/Upload-Coveralls-Report">Upload Coveralls Report</a></li>
 
                     </ul>
                             
@@ -153,16 +161,61 @@
 
 
 
-		<section class="content-header">
-			<h1>Clearcache</h1>
-		</section>
-	<section class="content">
-		<div class="mermaid">
-graph TD;
-ClearCache-->Clear-AppVeyor-Cache;
-</div>
+<section class="content-header">
+			<h3><a href="/Cake.Terraform/api/Cake.Terraform.Apply/TerraformApplySettings">Terraform<wbr>Apply<wbr>Settings</a>.</h3>
+	<h1>Destroy <small>Property</small></h1>
+</section>
+<section class="content">
+	
+	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+    Does destory
+    <code class="cs"></code>
+    </div>
 
-	</section>
+		<div class="panel panel-default">
+  			<div class="panel-body">
+				<dl class="dl-horizontal">	
+						
+						<dt>Namespace</dt>
+						<dd><a href="/Cake.Terraform/api/Cake.Terraform.Apply">Cake<wbr>.Terraform<wbr>.Apply</a></dd>
+					
+						<dt>Containing Type</dt>
+						<dd><a href="/Cake.Terraform/api/Cake.Terraform.Apply/TerraformApplySettings">Terraform<wbr>Apply<wbr>Settings</a></dd>		
+					
+				</dl>
+  			</div>
+		</div>
+
+	<h1 id="Syntax">Syntax</h1>
+	<pre><code>public bool Destroy { get; set; }</code></pre>
+
+
+
+
+
+	<h1 id="Value">Value</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody><tr>
+					<td>bool</td>
+					<td></td>
+				</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+
+	
+</section>
                 
             </div>           
             
@@ -247,5 +300,5 @@ ClearCache-->Clear-AppVeyor-Cache;
                 }, 500);
             });
         </script>
-    </body>
-</html>
+    
+</body></html>
