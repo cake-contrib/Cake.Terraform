@@ -1,17 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net461</TargetFrameworks>
+    <!--
+      Fool Cake.Incubator into thinking we're building agains netcoreapp3.1.
+      This is done to make Cake.Recipe avoid using OpenCover.                                                                                                                                                                                         
+      Remove this hack if Cake.Recipe bumps the usage of Cake.Incubator to version 7.0.0
+    -->
+    <TargetFrameworks Condition="false">netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>net461;net5.0</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cake.Core" Version="0.33.0" />
-    <PackageReference Include="Cake.Testing" Version="0.33.0" />
+    <PackageReference Include="Cake.Core" Version="1.0.0" />
+    <PackageReference Include="Cake.Testing" Version="1.0.0" />
     <PackageReference Include="coverlet.msbuild" Version="6.0.2">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
     <!--
       add a direct reference to Microsoft.TestPlatform.ObjectModel
       to work around https://github.com/microsoft/vstest/issues/2469
