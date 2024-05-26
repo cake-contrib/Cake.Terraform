@@ -17,6 +17,11 @@ namespace Cake.Terraform.Apply
             var builder = new ProcessArgumentBuilder()
                 .Append("apply");
 
+            if (settings.Destroy)
+            {
+                builder.Append("-destroy");
+            }
+
             // Order of AutoApprove and Plan are important.
             if (settings.AutoApprove)
             {
@@ -42,6 +47,11 @@ namespace Cake.Terraform.Apply
             foreach (var inputVariable in settings.InputVariables ?? new Dictionary<string, string>())
             {
                 builder.AppendSwitchQuoted("-var", $"{inputVariable.Key}={inputVariable.Value}");
+            }
+
+            if (!settings.Input)
+            {
+                builder.AppendSwitch("-input", "=", settings.Input.ToString());
             }
 
             Run(settings, builder);

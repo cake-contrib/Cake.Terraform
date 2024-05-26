@@ -1,27 +1,24 @@
-﻿using Cake.Core;
-using Cake.Terraform.EnvList;
+﻿using System.Collections.Generic;
+using Cake.Core;
+using Cake.Terraform.Validate;
 using Cake.Testing;
 using Xunit;
 
 namespace Cake.Terraform.Tests
 {
-    using System.Collections.Generic;
-
-    public class TerraformEnvListTests
+    public class TerraformValidateTests
     {
-        class Fixture : TerraformFixture<TerraformEnvListSettings>
+        class Fixture : TerraformFixture<TerraformValidateSettings>
         {
             public Fixture(PlatformFamily platformFamily = PlatformFamily.Windows) : base(platformFamily) { }
-
-            public IEnumerable<string> Environments { get; private set; } = new List<string>();
-
+            
             protected override void RunTool()
             {
-                ProcessRunner.Process.SetStandardOutput(new List<string>{ "default" });
+                ProcessRunner.Process.SetStandardOutput(new List<string> { "default" });
 
-                var tool = new TerraformEnvListRunner(FileSystem, Environment, ProcessRunner, Tools);
+                var tool = new TerraformValidateRunner(FileSystem, Environment, ProcessRunner, Tools);
 
-                Environments = tool.Run(Settings);
+                tool.Run(Settings);
             }
         }
 
@@ -44,7 +41,7 @@ namespace Cake.Terraform.Tests
             [InlineData("/bin/tools/terraform/terraform", "/bin/tools/terraform/terraform")]
             public void Should_use_terraform_from_tool_path_if_provided(string toolPath, string expected)
             {
-                var fixture = new Fixture() {Settings = {ToolPath = toolPath}};
+                var fixture = new Fixture() { Settings = { ToolPath = toolPath } };
                 fixture.GivenSettingsToolPathExist();
 
                 var result = fixture.Run();
@@ -93,27 +90,7 @@ namespace Cake.Terraform.Tests
 
                 var result = fixture.Run();
 
-                Assert.Contains("workspace list", result.Args);
-            }
-
-            [Fact]
-            public void Should_set_env_and_list_parameter()
-            {
-                var fixture = new Fixture {Settings = {EnvCommand = TerraformEnvSettings.EnvCommandType.Env}};
-
-                var result = fixture.Run();
-
-                Assert.Contains("env list", result.Args);
-            }
-
-            [Fact]
-            public void Should_return_existing_environments()
-            {
-                var fixture = new Fixture();
-            
-                var result = fixture.Run();
-                
-                Assert.Contains("default", fixture.Environments);
+                Assert.Contains("validate", result.Args);
             }
         }
     }

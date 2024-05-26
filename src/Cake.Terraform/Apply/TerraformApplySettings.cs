@@ -5,6 +5,11 @@ namespace Cake.Terraform.Apply
 {
     public class TerraformApplySettings : TerraformSettings
     {
+        public TerraformApplySettings()
+        {
+            this.Input = true;
+        }
+
         public int Parallelism { get; set; }
 
         public FilePath Plan { get; set; }
@@ -25,5 +30,17 @@ namespace Cake.Terraform.Apply
         /// https://www.terraform.io/docs/commands/apply.html#auto-approve
         /// </summary>
         public bool AutoApprove { get; set; }
+
+        /// <summary>
+        /// Ask for input for variables if not directly set.
+        /// <see>https://www.terraform.io/docs/commands/apply.html#input-true</see>
+        /// </summary>
+        public bool Input { get; set; }
+
+        /// <summary>
+        /// Does destory
+        /// <see>https://www.terraform.io/docs/commands/destroy.html</see>
+        /// </summary>
+        public bool Destroy { get; set; }
     }
 }

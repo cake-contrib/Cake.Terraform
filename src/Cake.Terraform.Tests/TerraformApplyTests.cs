@@ -143,6 +143,22 @@ namespace Cake.Terraform.Tests
             }
 
             [Fact]
+            public void Should_Append_Destroy_When_AutoApprove_Is_True()
+            {
+                var fixture = new Fixture
+                {
+                    Settings = new TerraformApplySettings
+                    {
+                        Destroy = true
+                    }
+                };
+
+                var result = fixture.Run();
+
+                Assert.Contains("-destroy", result.Args);
+            }
+
+            [Fact]
             public void Should_set_plan_path()
             {
                 var fixture = new Fixture
@@ -157,7 +173,7 @@ namespace Cake.Terraform.Tests
                  Assert.Equal("apply \"plan.out\"", result.Args);
             }
 
-             [Fact]
+            [Fact]
             public void Should_set_parallelism()
             {
                 var fixture = new Fixture
@@ -170,6 +186,32 @@ namespace Cake.Terraform.Tests
                 var result = fixture.Run();
 
                 Assert.Contains("-parallelism=42", result.Args);
+            }
+
+            [Fact]
+            public void Should_omit_input_flag_by_default()
+            {
+                var fixture = new Fixture();
+
+                var result = fixture.Run();
+
+                Assert.DoesNotContain("-input", result.Args);
+            }
+
+            [Fact]
+            public void Should_include_input_flag_when_setting_is_false()
+            {
+                var fixture = new Fixture
+                {
+                    Settings = new TerraformApplySettings
+                    {
+                        Input = false
+                    }
+                };
+
+                var result = fixture.Run();
+
+                Assert.Contains("-input", result.Args);
             }
         }
     }
