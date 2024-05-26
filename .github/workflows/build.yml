@@ -27,8 +27,6 @@ jobs:
       AZURE_USER: ${{ secrets.AZURE_USER }}
       COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
       GITHUB_PAT: ${{ secrets.GH_TOKEN }}
-      GITTER_ROOM_ID: ${{ secrets.GITTER_ROOM_ID }}
-      GITTER_TOKEN: ${{ secrets.GITTER_TOKEN }}
       GPR_PASSWORD: ${{ secrets.GPR_PASSWORD }}
       GPR_SOURCE: ${{ secrets.GPR_SOURCE }}
       GPR_USER: ${{ secrets.GPR_USER }}
