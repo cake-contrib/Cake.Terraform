@@ -39,76 +39,6 @@ var searchModule = function() {
     a(
         {
             id:0,
-            title:"TerraformEnvSelectRunner",
-            content:"TerraformEnvSelectRunner",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.Terraform/api/Cake.Terraform.EnvSelect/TerraformEnvSelectRunner',
-            title:"TerraformEnvSelectRunner",
-            description:""
-        }
-    );
-    a(
-        {
-            id:1,
-            title:"TerraformOutputSettings",
-            content:"TerraformOutputSettings",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.Terraform/api/Cake.Terraform.Output/TerraformOutputSettings',
-            title:"TerraformOutputSettings",
-            description:""
-        }
-    );
-    a(
-        {
-            id:2,
-            title:"TerraformShowSettings",
-            content:"TerraformShowSettings",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.Terraform/api/Cake.Terraform.Show/TerraformShowSettings',
-            title:"TerraformShowSettings",
-            description:""
-        }
-    );
-    a(
-        {
-            id:3,
-            title:"TerraformEnvNewRunner",
-            content:"TerraformEnvNewRunner",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.Terraform/api/Cake.Terraform.EnvNew/TerraformEnvNewRunner',
-            title:"TerraformEnvNewRunner",
-            description:""
-        }
-    );
-    a(
-        {
-            id:4,
-            title:"TerraformRunner",
-            content:"TerraformRunner",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.Terraform/api/Cake.Terraform/TerraformRunner_1',
-            title:"TerraformRunner<TTerraformSettings>",
-            description:""
-        }
-    );
-    a(
-        {
-            id:5,
             title:"TerraformEnvDeleteRunner",
             content:"TerraformEnvDeleteRunner",
             description:'',
@@ -122,77 +52,21 @@ var searchModule = function() {
     );
     a(
         {
-            id:6,
-            title:"TerraformPlanSettings",
-            content:"TerraformPlanSettings",
+            id:1,
+            title:"TerraformEnvSelectRunner",
+            content:"TerraformEnvSelectRunner",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.Terraform/api/Cake.Terraform.Plan/TerraformPlanSettings',
-            title:"TerraformPlanSettings",
+            url:'/Cake.Terraform/api/Cake.Terraform.EnvSelect/TerraformEnvSelectRunner',
+            title:"TerraformEnvSelectRunner",
             description:""
         }
     );
     a(
         {
-            id:7,
-            title:"TerraformEnvSettings EnvCommandType",
-            content:"TerraformEnvSettings EnvCommandType",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.Terraform/api/Cake.Terraform/EnvCommandType',
-            title:"TerraformEnvSettings.EnvCommandType",
-            description:""
-        }
-    );
-    a(
-        {
-            id:8,
-            title:"TerraformEnvSettings",
-            content:"TerraformEnvSettings",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.Terraform/api/Cake.Terraform/TerraformEnvSettings',
-            title:"TerraformEnvSettings",
-            description:""
-        }
-    );
-    a(
-        {
-            id:9,
-            title:"TerraformPlanRunner",
-            content:"TerraformPlanRunner",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.Terraform/api/Cake.Terraform.Plan/TerraformPlanRunner',
-            title:"TerraformPlanRunner",
-            description:""
-        }
-    );
-    a(
-        {
-            id:10,
-            title:"TerraformEnvDeleteSettings",
-            content:"TerraformEnvDeleteSettings",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.Terraform/api/Cake.Terraform.EnvDelete/TerraformEnvDeleteSettings',
-            title:"TerraformEnvDeleteSettings",
-            description:""
-        }
-    );
-    a(
-        {
-            id:11,
+            id:2,
             title:"TerraformInitRunner",
             content:"TerraformInitRunner",
             description:'',
@@ -206,77 +80,7 @@ var searchModule = function() {
     );
     a(
         {
-            id:12,
-            title:"OutputFormat",
-            content:"OutputFormat",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.Terraform/api/Cake.Terraform.Show/OutputFormat',
-            title:"OutputFormat",
-            description:""
-        }
-    );
-    a(
-        {
-            id:13,
-            title:"TerraformRefreshRunner",
-            content:"TerraformRefreshRunner",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.Terraform/api/Cake.Terraform.Refresh/TerraformRefreshRunner',
-            title:"TerraformRefreshRunner",
-            description:""
-        }
-    );
-    a(
-        {
-            id:14,
-            title:"TerraformRefreshSettings",
-            content:"TerraformRefreshSettings",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.Terraform/api/Cake.Terraform.Refresh/TerraformRefreshSettings',
-            title:"TerraformRefreshSettings",
-            description:""
-        }
-    );
-    a(
-        {
-            id:15,
-            title:"TerraformInitSettings",
-            content:"TerraformInitSettings",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.Terraform/api/Cake.Terraform.Init/TerraformInitSettings',
-            title:"TerraformInitSettings",
-            description:""
-        }
-    );
-    a(
-        {
-            id:16,
-            title:"TerraformValidateSettings",
-            content:"TerraformValidateSettings",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.Terraform/api/Cake.Terraform.Validate/TerraformValidateSettings',
-            title:"TerraformValidateSettings",
-            description:""
-        }
-    );
-    a(
-        {
-            id:17,
+            id:3,
             title:"TerraformAliases",
             content:"TerraformAliases",
             description:'',
@@ -290,35 +94,91 @@ var searchModule = function() {
     );
     a(
         {
-            id:18,
-            title:"TerraformEnvSelectSettings",
-            content:"TerraformEnvSelectSettings",
+            id:4,
+            title:"TerraformEnvListRunner",
+            content:"TerraformEnvListRunner",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.Terraform/api/Cake.Terraform.EnvSelect/TerraformEnvSelectSettings',
-            title:"TerraformEnvSelectSettings",
+            url:'/Cake.Terraform/api/Cake.Terraform.EnvList/TerraformEnvListRunner',
+            title:"TerraformEnvListRunner",
             description:""
         }
     );
     a(
         {
-            id:19,
-            title:"TerraformDestroyRunner",
-            content:"TerraformDestroyRunner",
+            id:5,
+            title:"TerraformValidateSettings",
+            content:"TerraformValidateSettings",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.Terraform/api/Cake.Terraform.Destroy/TerraformDestroyRunner',
-            title:"TerraformDestroyRunner",
+            url:'/Cake.Terraform/api/Cake.Terraform.Validate/TerraformValidateSettings',
+            title:"TerraformValidateSettings",
             description:""
         }
     );
     a(
         {
-            id:20,
+            id:6,
+            title:"TerraformRefreshRunner",
+            content:"TerraformRefreshRunner",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.Terraform/api/Cake.Terraform.Refresh/TerraformRefreshRunner',
+            title:"TerraformRefreshRunner",
+            description:""
+        }
+    );
+    a(
+        {
+            id:7,
+            title:"TerraformOutputSettings",
+            content:"TerraformOutputSettings",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.Terraform/api/Cake.Terraform.Output/TerraformOutputSettings',
+            title:"TerraformOutputSettings",
+            description:""
+        }
+    );
+    a(
+        {
+            id:8,
+            title:"TerraformPlanSettings",
+            content:"TerraformPlanSettings",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.Terraform/api/Cake.Terraform.Plan/TerraformPlanSettings',
+            title:"TerraformPlanSettings",
+            description:""
+        }
+    );
+    a(
+        {
+            id:9,
+            title:"TerraformRunner",
+            content:"TerraformRunner",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.Terraform/api/Cake.Terraform/TerraformRunner_1',
+            title:"TerraformRunner<TTerraformSettings>",
+            description:""
+        }
+    );
+    a(
+        {
+            id:10,
             title:"TerraformShowRunner",
             content:"TerraformShowRunner",
             description:'',
@@ -332,49 +192,7 @@ var searchModule = function() {
     );
     a(
         {
-            id:21,
-            title:"TerraformValidateRunner",
-            content:"TerraformValidateRunner",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.Terraform/api/Cake.Terraform.Validate/TerraformValidateRunner',
-            title:"TerraformValidateRunner",
-            description:""
-        }
-    );
-    a(
-        {
-            id:22,
-            title:"TerraformSettings",
-            content:"TerraformSettings",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.Terraform/api/Cake.Terraform/TerraformSettings',
-            title:"TerraformSettings",
-            description:""
-        }
-    );
-    a(
-        {
-            id:23,
-            title:"TerraformDestroySettings",
-            content:"TerraformDestroySettings",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.Terraform/api/Cake.Terraform.Destroy/TerraformDestroySettings',
-            title:"TerraformDestroySettings",
-            description:""
-        }
-    );
-    a(
-        {
-            id:24,
+            id:11,
             title:"TerraformOutputRunner",
             content:"TerraformOutputRunner",
             description:'',
@@ -388,21 +206,7 @@ var searchModule = function() {
     );
     a(
         {
-            id:25,
-            title:"TerraformApplyRunner",
-            content:"TerraformApplyRunner",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.Terraform/api/Cake.Terraform.Apply/TerraformApplyRunner',
-            title:"TerraformApplyRunner",
-            description:""
-        }
-    );
-    a(
-        {
-            id:26,
+            id:12,
             title:"TerraformApplySettings",
             content:"TerraformApplySettings",
             description:'',
@@ -416,7 +220,35 @@ var searchModule = function() {
     );
     a(
         {
-            id:27,
+            id:13,
+            title:"TerraformRefreshSettings",
+            content:"TerraformRefreshSettings",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.Terraform/api/Cake.Terraform.Refresh/TerraformRefreshSettings',
+            title:"TerraformRefreshSettings",
+            description:""
+        }
+    );
+    a(
+        {
+            id:14,
+            title:"TerraformDestroySettings",
+            content:"TerraformDestroySettings",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.Terraform/api/Cake.Terraform.Destroy/TerraformDestroySettings',
+            title:"TerraformDestroySettings",
+            description:""
+        }
+    );
+    a(
+        {
+            id:15,
             title:"TerraformEnvNewSettings",
             content:"TerraformEnvNewSettings",
             description:'',
@@ -425,6 +257,174 @@ var searchModule = function() {
         {
             url:'/Cake.Terraform/api/Cake.Terraform.EnvNew/TerraformEnvNewSettings',
             title:"TerraformEnvNewSettings",
+            description:""
+        }
+    );
+    a(
+        {
+            id:16,
+            title:"TerraformValidateRunner",
+            content:"TerraformValidateRunner",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.Terraform/api/Cake.Terraform.Validate/TerraformValidateRunner',
+            title:"TerraformValidateRunner",
+            description:""
+        }
+    );
+    a(
+        {
+            id:17,
+            title:"TerraformDestroyRunner",
+            content:"TerraformDestroyRunner",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.Terraform/api/Cake.Terraform.Destroy/TerraformDestroyRunner',
+            title:"TerraformDestroyRunner",
+            description:""
+        }
+    );
+    a(
+        {
+            id:18,
+            title:"TerraformShowSettings",
+            content:"TerraformShowSettings",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.Terraform/api/Cake.Terraform.Show/TerraformShowSettings',
+            title:"TerraformShowSettings",
+            description:""
+        }
+    );
+    a(
+        {
+            id:19,
+            title:"TerraformEnvSettings EnvCommandType",
+            content:"TerraformEnvSettings EnvCommandType",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.Terraform/api/Cake.Terraform/EnvCommandType',
+            title:"TerraformEnvSettings.EnvCommandType",
+            description:""
+        }
+    );
+    a(
+        {
+            id:20,
+            title:"OutputFormat",
+            content:"OutputFormat",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.Terraform/api/Cake.Terraform.Show/OutputFormat',
+            title:"OutputFormat",
+            description:""
+        }
+    );
+    a(
+        {
+            id:21,
+            title:"TerraformInitSettings",
+            content:"TerraformInitSettings",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.Terraform/api/Cake.Terraform.Init/TerraformInitSettings',
+            title:"TerraformInitSettings",
+            description:""
+        }
+    );
+    a(
+        {
+            id:22,
+            title:"TerraformEnvNewRunner",
+            content:"TerraformEnvNewRunner",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.Terraform/api/Cake.Terraform.EnvNew/TerraformEnvNewRunner',
+            title:"TerraformEnvNewRunner",
+            description:""
+        }
+    );
+    a(
+        {
+            id:23,
+            title:"TerraformEnvSettings",
+            content:"TerraformEnvSettings",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.Terraform/api/Cake.Terraform/TerraformEnvSettings',
+            title:"TerraformEnvSettings",
+            description:""
+        }
+    );
+    a(
+        {
+            id:24,
+            title:"TerraformApplyRunner",
+            content:"TerraformApplyRunner",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.Terraform/api/Cake.Terraform.Apply/TerraformApplyRunner',
+            title:"TerraformApplyRunner",
+            description:""
+        }
+    );
+    a(
+        {
+            id:25,
+            title:"TerraformPlanRunner",
+            content:"TerraformPlanRunner",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.Terraform/api/Cake.Terraform.Plan/TerraformPlanRunner',
+            title:"TerraformPlanRunner",
+            description:""
+        }
+    );
+    a(
+        {
+            id:26,
+            title:"TerraformSettings",
+            content:"TerraformSettings",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.Terraform/api/Cake.Terraform/TerraformSettings',
+            title:"TerraformSettings",
+            description:""
+        }
+    );
+    a(
+        {
+            id:27,
+            title:"TerraformEnvDeleteSettings",
+            content:"TerraformEnvDeleteSettings",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.Terraform/api/Cake.Terraform.EnvDelete/TerraformEnvDeleteSettings',
+            title:"TerraformEnvDeleteSettings",
             description:""
         }
     );
@@ -445,14 +445,14 @@ var searchModule = function() {
     a(
         {
             id:29,
-            title:"TerraformEnvListRunner",
-            content:"TerraformEnvListRunner",
+            title:"TerraformEnvSelectSettings",
+            content:"TerraformEnvSelectSettings",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.Terraform/api/Cake.Terraform.EnvList/TerraformEnvListRunner',
-            title:"TerraformEnvListRunner",
+            url:'/Cake.Terraform/api/Cake.Terraform.EnvSelect/TerraformEnvSelectSettings',
+            title:"TerraformEnvSelectSettings",
             description:""
         }
     );
