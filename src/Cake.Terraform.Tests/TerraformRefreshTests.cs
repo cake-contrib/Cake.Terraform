@@ -1,4 +1,5 @@
-﻿using Cake.Core;
+﻿using System;
+using Cake.Core;
 using Cake.Terraform.Refresh;
 using Cake.Testing;
 using Xunit;
@@ -109,6 +110,7 @@ namespace Cake.Terraform.Tests
                 Assert.Contains("-var \"access_key=foo\" -var \"secret_key=bar\"", result.Args);
             }
 
+            [Obsolete("Remove, together with InputVariablesFile")]
             [Fact]
             public void Should_set_input_variables_file()
             {
@@ -127,6 +129,27 @@ namespace Cake.Terraform.Tests
                 var result = fixture.Run();
 
                 Assert.Contains("-var-file \"./aws-creds.json\" -var \"access_key=foo\" -var \"secret_key=bar\"",
+                    result.Args);
+            }
+            
+            [Fact]
+            public void Should_set_input_variables_files()
+            {
+                var fixture = new Fixture
+                {
+                    Settings = new TerraformRefreshSettings
+                    {
+                        InputVariablesFiles = { "./aws-creds.json", "./more-vars.json" },
+                        InputVariables = new Dictionary<string, string>
+                        {
+                            {"access_key", "foo"},
+                            {"secret_key", "bar"}
+                        }
+                    }
+                };
+                var result = fixture.Run();
+
+                Assert.Contains("-var-file \"./aws-creds.json\" -var-file \"./more-vars.json\" -var \"access_key=foo\" -var \"secret_key=bar\"",
                     result.Args);
             }
         }

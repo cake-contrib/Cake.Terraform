@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Cake.Core.IO;
 
 namespace Cake.Terraform.Refresh
@@ -12,10 +13,13 @@ namespace Cake.Terraform.Refresh
         /// </summary>
         public Dictionary<string, string> InputVariables { get; set; }
         
+        [Obsolete("use InputVariablesFiles instead.")]
+        public string InputVariablesFile { get; set; }
+
         /// <summary>
         /// Variables file
         /// https://www.terraform.io/docs/configuration/variables.html#variable-files
         /// </summary>
-        public string InputVariablesFile { get; set; }
+        public ICollection<string> InputVariablesFiles { get; } = new List<string>();
     }
 }
