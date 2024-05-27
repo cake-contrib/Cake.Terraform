@@ -7,7 +7,7 @@
       Remove this hack if Cake.Recipe bumps the usage of Cake.Incubator to version 7.0.0
     -->
     <TargetFrameworks Condition="false">netcoreapp3.1</TargetFrameworks>
-    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+    <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
