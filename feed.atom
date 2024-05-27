@@ -4,20 +4,7 @@
 	<title>Cake.Terraform</title>
 	<link rel="self" href="http://cake-contrib.github.io/Cake.Terraform" />
 	<rights>2024</rights>
-	<updated>2024-05-27T21:14:13Z</updated>
-	<entry>
-		<id>http://cake-contrib.github.io/Cake.Terraform/blog/release-0-3-0</id>
-		<title>New release - 0.2.0</title>
-		<author>
-			<name>erikvanbrakel</name>
-		</author>
-		<link href="http://cake-contrib.github.io/Cake.Terraform/blog/release-0-3-0" />
-		<updated>2017-03-22T00:00:00Z</updated>
-		<content>&lt;h1 id="is-here"&gt;0.2.0 is here&lt;/h1&gt;
-&lt;p&gt;This version adds functionality to format the output of the TerraformShow method as HTML. This is particularly useful in CI/CD scenarios, as a report to use within a build server such as TeamCity.&lt;/p&gt;
-</content>
-		<summary>&lt;p&gt;This version adds functionality to format the output of the TerraformShow method as HTML. This is particularly useful in CI/CD scenarios, as a report to use within a build server such as TeamCity.&lt;/p&gt;</summary>
-	</entry>
+	<updated>2024-05-27T21:25:26Z</updated>
 	<entry>
 		<id>http://cake-contrib.github.io/Cake.Terraform/blog/release-0.1.1</id>
 		<title>New release - 0.2.0</title>
@@ -25,6 +12,19 @@
 			<name>erikvanbrakel</name>
 		</author>
 		<link href="http://cake-contrib.github.io/Cake.Terraform/blog/release-0.1.1" />
+		<updated>2017-03-22T00:00:00Z</updated>
+		<content>&lt;h1 id="is-here"&gt;0.2.0 is here&lt;/h1&gt;
+&lt;p&gt;This version adds functionality to format the output of the TerraformShow method as HTML. This is particularly useful in CI/CD scenarios, as a report to use within a build server such as TeamCity.&lt;/p&gt;
+</content>
+		<summary>&lt;p&gt;This version adds functionality to format the output of the TerraformShow method as HTML. This is particularly useful in CI/CD scenarios, as a report to use within a build server such as TeamCity.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<id>http://cake-contrib.github.io/Cake.Terraform/blog/release-0-3-0</id>
+		<title>New release - 0.2.0</title>
+		<author>
+			<name>erikvanbrakel</name>
+		</author>
+		<link href="http://cake-contrib.github.io/Cake.Terraform/blog/release-0-3-0" />
 		<updated>2017-03-22T00:00:00Z</updated>
 		<content>&lt;h1 id="is-here"&gt;0.2.0 is here&lt;/h1&gt;
 &lt;p&gt;This version adds functionality to format the output of the TerraformShow method as HTML. This is particularly useful in CI/CD scenarios, as a report to use within a build server such as TeamCity.&lt;/p&gt;
