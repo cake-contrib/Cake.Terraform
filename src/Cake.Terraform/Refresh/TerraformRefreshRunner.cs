@@ -23,6 +23,11 @@ namespace Cake.Terraform.Refresh
                 builder.Append(settings.Plan.FullPath);
             }
 
+            foreach (var varFile in settings.InputVariablesFiles) 
+            {
+                builder.AppendSwitchQuoted("-var-file", $"{varFile}");
+            }
+            
             if (!string.IsNullOrEmpty(settings.InputVariablesFile))
             {
                 builder.AppendSwitchQuoted("-var-file", $"{settings.InputVariablesFile}");
