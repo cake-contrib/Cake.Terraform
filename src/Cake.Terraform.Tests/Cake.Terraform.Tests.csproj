@@ -23,8 +23,8 @@
       to work around https://github.com/microsoft/vstest/issues/2469
     -->
     <PackageReference Include="Microsoft.TestPlatform.ObjectModel" Version="17.10.0" />
-    <PackageReference Include="xunit" Version="2.8.1" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.1" />
+    <PackageReference Include="xunit" Version="2.9.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
   </ItemGroup>
 
   <ItemGroup>
