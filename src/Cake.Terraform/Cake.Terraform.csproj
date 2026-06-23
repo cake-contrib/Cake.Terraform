@@ -34,7 +34,7 @@ For details see $(PackageProjectUrl)/releases</PackageReleaseNotes>
       <Version>$(CakeVersion)</Version>
     </PackageReference>
     <PackageReference Include="CakeContrib.Guidelines">
-      <Version>1.5.1</Version>
+      <Version>1.7.0</Version>
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
